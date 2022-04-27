@@ -18,6 +18,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 	
+	public static BasePage getBasePageObject() {
+		return new BasePage();
+	}
+	
 	public void openPageURL(WebDriver driver, String pageUrl) {
 		driver.get(pageUrl);
 	}
@@ -107,15 +111,15 @@ public class BasePage {
 			driver.switchTo().window(parentid);
 		}
 	
-	public By getByXpath (String locator) {
+	private By getByXpath (String locator) {
 		return By.xpath(locator);
 	}
 	
-	public WebElement getWebElement (WebDriver driver, String xpathLocator) {
+	private WebElement getWebElement (WebDriver driver, String xpathLocator) {
 		return driver.findElement(getByXpath(xpathLocator));
 	}
 	
-	public List<WebElement> getListWebElements (WebDriver driver, String xpathLocator) {
+	private List<WebElement> getListWebElements (WebDriver driver, String xpathLocator) {
 		return driver.findElements(getByXpath(xpathLocator));
 	}
 	
@@ -323,7 +327,5 @@ public class BasePage {
 			e.printStackTrace();
 		}
 }
-	
-	
 
 }
