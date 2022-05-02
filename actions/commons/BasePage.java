@@ -1,6 +1,5 @@
 package commons;
 
-import java.sql.Driver;
 import java.util.List;
 import java.util.Set;
 
