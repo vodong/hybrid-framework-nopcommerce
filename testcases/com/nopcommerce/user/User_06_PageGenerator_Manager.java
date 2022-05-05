@@ -5,11 +5,8 @@ import static org.testng.Assert.assertEquals;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import javax.management.RuntimeErrorException;
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -20,10 +17,11 @@ import org.testng.annotations.Test;
 import commons.BasePage;
 import commons.BaseTest;
 import pageObjects.nopcommerce.HomePageObject;
+import pageObjects.nopcommerce.PageGeneratorManager;
 import pageObjects.nopcommerce.RegisterPageObject;
 
-public class User_05_Multiple_Browser extends BaseTest {
-	private WebDriver driver;	
+public class User_06_PageGenerator_Manager extends BaseTest {
+	private WebDriver driver;
 	private String emailaddress,firstname,lastname,password,confirmpassword,invalidpassword,invalidemail;
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
@@ -32,7 +30,8 @@ public class User_05_Multiple_Browser extends BaseTest {
   @BeforeClass
   public void beforeClass(String browserName) {
 	  driver = getBrowserDriver(browserName);
- 
+	  homePage = PageGeneratorManager.getHomePage(driver);
+
 	  emailaddress = "frameworkdpv_" + generateNumber() + "@yopmail.com";
 	  firstname = "A";
 	  lastname = "T";
@@ -40,18 +39,13 @@ public class User_05_Multiple_Browser extends BaseTest {
 	  confirmpassword = "123456";
 	  invalidpassword = "123";
 	  invalidemail = "test@";
-	  
-	  driver.get("https://demo.nopcommerce.com");
-	  
-	  homePage = new HomePageObject(driver);
-	  registerPage = new RegisterPageObject(driver);  
   }
 	
   @Test
   public void TC_01_Register_With_Empty_Data() {
 	  
 	  System.out.println("Home Page - Step 01: Click to Register link");
-	  homePage.clickToRegisterLink();
+	  registerPage = homePage.clickToRegisterLink();
 	  
 	  System.out.println("Register Page - Step 02: Click to Register button");
 	  registerPage.clickToRegisterButton();
@@ -67,7 +61,7 @@ public class User_05_Multiple_Browser extends BaseTest {
   public void TC_02_Register_Invalid_Email() {
 	  
 	  System.out.println("Home Page - Step 01: Click to Register link");
-	  homePage.clickToRegisterLink();
+	  registerPage = homePage.clickToRegisterLink();
 	  
 	  System.out.println("Register Page - Step 02: Input Data");
 	  registerPage.inputToFirstNameTextBox(firstname);
@@ -84,11 +78,11 @@ public class User_05_Multiple_Browser extends BaseTest {
 	  
   }
 
-  
+  @Test
   public void TC_03_Register_With_Valid_Information() { 
 	  
 	  System.out.println("Home Page - Step 01: Click to Register link");
-	  homePage.clickToRegisterLink();
+	  registerPage = homePage.clickToRegisterLink();
 	  
 	  System.out.println("Register Page - Step 02: Input Data");
 	  registerPage.inputToFirstNameTextBox(firstname);
@@ -107,10 +101,10 @@ public class User_05_Multiple_Browser extends BaseTest {
 	  registerPage.clickToLogoutButton();
   }
  
-  
+  @Test
   public void TC_04_Register_With_Email_Existed() {
 	  System.out.println("Home Page - Step 01: Click to Register link");
-	  homePage.clickToRegisterLink();
+	  registerPage = homePage.clickToRegisterLink();
 	  
 	  System.out.println("Register Page - Step 02: Input Data");
 	  registerPage.inputToFirstNameTextBox(firstname);
@@ -127,11 +121,11 @@ public class User_05_Multiple_Browser extends BaseTest {
 
   }
  
- 
+  @Test
   public void TC_05_Register_Password_Less_Than_6_Characters() {
 	  System.out.println("Home Page - Step 01: Click to Register link");
-	  homePage.clickToRegisterLink();
-	  
+	  registerPage = homePage.clickToRegisterLink();
+
 	  System.out.println("Register Page - Step 02: Input Data");
 	  registerPage.inputToFirstNameTextBox(firstname);
 	  registerPage.inputToLastNameTextBox(lastname);
@@ -147,10 +141,10 @@ public class User_05_Multiple_Browser extends BaseTest {
 	  
   }
   
-  
+  @Test
   public void TC_06_Register_With_Incorrect_Confirm_Password() {
 	  System.out.println("Home Page - Step 01: Click to Register link");
-	  homePage.clickToRegisterLink();
+	  registerPage = homePage.clickToRegisterLink();
 	  
 	  System.out.println("Register Page - Step 02: Input Data");
 	  registerPage.inputToFirstNameTextBox(firstname);

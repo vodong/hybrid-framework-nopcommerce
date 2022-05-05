@@ -14,9 +14,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import commons.BasePage;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.nopcommerce.HomePageObject;
+import pageObjects.nopcommerce.LoginPageObject;
+import pageObjects.nopcommerce.RegisterPageObject;
 
 public class User_04_Page_Object_Login extends BasePage {
 	private WebDriver driver;
