@@ -13,16 +13,11 @@ import org.testng.annotations.Test;
 import commons.BaseTest;
 import commons.GlobalConstants;
 import commons.PageGeneratorManager;
-import pageObjects.liveguru.DashBoardPageObject;
 import pageObjects.nopcommerce.Admin.AdminDashBoardObject;
 import pageObjects.nopcommerce.Admin.AdminLoginPageObject;
-import pageObjects.nopcommerce.User.UserAddressPageObject;
-import pageObjects.nopcommerce.User.UserCustomerInfoPageObject;
 import pageObjects.nopcommerce.User.UserHomePageObject;
 import pageObjects.nopcommerce.User.UserLoginPageObject;
-import pageObjects.nopcommerce.User.UserMyProductReviewPageObject;
 import pageObjects.nopcommerce.User.UserRegisterPageObject;
-import pageObjects.nopcommerce.User.UserRewardPointPageObject;
 
 public class User_08_Switch_Role extends BaseTest {
 	private WebDriver driver;
