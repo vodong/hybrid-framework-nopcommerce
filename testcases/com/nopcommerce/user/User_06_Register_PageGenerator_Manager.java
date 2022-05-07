@@ -20,7 +20,7 @@ import pageObjects.nopcommerce.HomePageObject;
 import pageObjects.nopcommerce.PageGeneratorManager;
 import pageObjects.nopcommerce.RegisterPageObject;
 
-public class User_06_Login_PageGenerator_Manager extends BaseTest {
+public class User_06_Register_PageGenerator_Manager extends BaseTest {
 	private WebDriver driver;
 	private String emailaddress,firstname,lastname,password,confirmpassword,invalidpassword,invalidemail;
 	private HomePageObject homePage;
