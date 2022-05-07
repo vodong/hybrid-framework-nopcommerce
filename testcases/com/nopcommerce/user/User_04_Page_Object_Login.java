@@ -63,7 +63,7 @@ public class User_04_Page_Object_Login extends BasePage {
   public void Login_01_With_Empty_Data() {
 	  
 	  System.out.println("Home Page - Step 01: Click to Login link");
-	  homePage.clickToLoginLin();
+	  homePage.clickToLoginLink();
 	  
 	  System.out.println("Login Page - Step 02: Click to Login button");
 	  loginPage.clickToLoginButton();
@@ -76,7 +76,7 @@ public class User_04_Page_Object_Login extends BasePage {
   public void Login_02_Invalid_Email() {
 	  
 	  System.out.println("Home Page - Step 01: Click to Login link");
-	  homePage.clickToLoginLin();
+	  homePage.clickToLoginLink();
 	  
 	  System.out.println("Login Page - Step 02: Input Invalid Email");
 	  loginPage.inputToEmailTextBox(invalidemail);
@@ -93,7 +93,7 @@ public class User_04_Page_Object_Login extends BasePage {
   public void Login_03_With_Email_Is_Not_Existed() { 
 	  
 	  System.out.println("Home Page - Step 01: Click to Login link");
-	  homePage.clickToLoginLin();
+	  homePage.clickToLoginLink();
 	  
 	  System.out.println("Login Page - Step 02: Input Email Is Not Existed");
 	  loginPage.inputToEmailTextBox(emailnotfound);
@@ -109,7 +109,7 @@ public class User_04_Page_Object_Login extends BasePage {
   @Test
   public void Login_04_With_Empty_Password() {
 	  System.out.println("Home Page - Step 01: Click to Login link");
-	  homePage.clickToLoginLin();
+	  homePage.clickToLoginLink();
 	  
 	  System.out.println("Login Page - Step 02: Input Email Is Not Existed");
 	  loginPage.inputToEmailTextBox(emailaddress);
@@ -126,7 +126,7 @@ public class User_04_Page_Object_Login extends BasePage {
   @Test
   public void Login_05_With_Wrong_Password() {
 	  System.out.println("Home Page - Step 01: Click to Login link");
-	  homePage.clickToLoginLin();
+	  homePage.clickToLoginLink();
 	  
 	  System.out.println("Login Page - Step 02: Input Email Is Not Existed");
 	  loginPage.inputToEmailTextBox(emailaddress);
@@ -143,7 +143,7 @@ public class User_04_Page_Object_Login extends BasePage {
   @Test
   public void Login_06_With_Valid_Information() {
 	  System.out.println("Home Page - Step 01: Click to Login link");
-	  homePage.clickToLoginLin();
+	  homePage.clickToLoginLink();
 	  
 	  System.out.println("Login Page - Step 02: Input Email Is Not Existed");
 	  loginPage.inputToEmailTextBox(emailaddress);
