@@ -14,17 +14,17 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import commons.BasePage;
-import pageObjects.nopcommerce.HomePageObject;
-import pageObjects.nopcommerce.LoginPageObject;
-import pageObjects.nopcommerce.RegisterPageObject;
+import pageObjects.nopcommerce.User.UserHomePageObject;
+import pageObjects.nopcommerce.User.UserLoginPageObject;
+import pageObjects.nopcommerce.User.UserRegisterPageObject;
 
 public class User_04_Page_Object_Login extends BasePage {
 	private WebDriver driver;
 	private String projectPath = System.getProperty("user.dir");
 	private String emailaddress,firstname,lastname,password,confirmpassword,invalidemail,emailnotfound,wrongpassword;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
 
   @BeforeClass
   public void beforeClass() {
@@ -42,9 +42,9 @@ public class User_04_Page_Object_Login extends BasePage {
 	  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	  driver.get("https://demo.nopcommerce.com");
 	  
-	  homePage = new HomePageObject(driver);
-	  registerPage = new RegisterPageObject(driver);
-	  loginPage = new LoginPageObject(driver);
+	  homePage = new UserHomePageObject(driver);
+	  registerPage = new UserRegisterPageObject(driver);
+	  loginPage = new UserLoginPageObject(driver);
 	  driver.manage().window().maximize();
 	  
 	  homePage.clickToRegisterLink();

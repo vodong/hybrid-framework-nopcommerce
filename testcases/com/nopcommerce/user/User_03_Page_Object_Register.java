@@ -14,15 +14,15 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import commons.BasePage;
-import pageObjects.nopcommerce.HomePageObject;
-import pageObjects.nopcommerce.RegisterPageObject;
+import pageObjects.nopcommerce.User.UserHomePageObject;
+import pageObjects.nopcommerce.User.UserRegisterPageObject;
 
 public class User_03_Page_Object_Register extends BasePage {
 	private WebDriver driver;
 	private String projectPath = System.getProperty("user.dir");
 	private String emailaddress,firstname,lastname,password,confirmpassword,invalidpassword,invalidemail;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
 
   @BeforeClass
   public void beforeClass() {
@@ -39,8 +39,8 @@ public class User_03_Page_Object_Register extends BasePage {
 	  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	  driver.get("https://demo.nopcommerce.com");
 	  
-	  homePage = new HomePageObject(driver);
-	  registerPage = new RegisterPageObject(driver);
+	  homePage = new UserHomePageObject(driver);
+	  registerPage = new UserRegisterPageObject(driver);
 	  driver.manage().window().maximize();
   }
 	

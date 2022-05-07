@@ -11,25 +11,25 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import commons.BaseTest;
-import pageObjects.nopcommerce.HomePageObject;
-import pageObjects.nopcommerce.LoginPageObject;
-import pageObjects.nopcommerce.MyProductReviewPageObject;
-import pageObjects.nopcommerce.AddressPageObject;
-import pageObjects.nopcommerce.CustomerInfoPageObject;
-import pageObjects.nopcommerce.PageGeneratorManager;
-import pageObjects.nopcommerce.RegisterPageObject;
-import pageObjects.nopcommerce.RewardPointPageObject;
+import commons.PageGeneratorManager;
+import pageObjects.nopcommerce.User.UserAddressPageObject;
+import pageObjects.nopcommerce.User.UserCustomerInfoPageObject;
+import pageObjects.nopcommerce.User.UserHomePageObject;
+import pageObjects.nopcommerce.User.UserLoginPageObject;
+import pageObjects.nopcommerce.User.UserMyProductReviewPageObject;
+import pageObjects.nopcommerce.User.UserRegisterPageObject;
+import pageObjects.nopcommerce.User.UserRewardPointPageObject;
 
 public class User_07_Login_PageGenerator_Manager extends BaseTest {
 	private WebDriver driver;
 	private String emailaddress,firstname,lastname,password,confirmpassword;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
-	private CustomerInfoPageObject customerInfor;
-	private AddressPageObject addressPage;
-	private MyProductReviewPageObject myProductReviewPage;
-	private RewardPointPageObject rewardPointPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
+	private UserCustomerInfoPageObject customerInfor;
+	private UserAddressPageObject addressPage;
+	private UserMyProductReviewPageObject myProductReviewPage;
+	private UserRewardPointPageObject rewardPointPage;
 	
 
   @Parameters("browser")

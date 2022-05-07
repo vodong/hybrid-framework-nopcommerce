@@ -29,7 +29,7 @@ public class BaseTest {
 			  throw new RuntimeException("Browser name is invalid");
 		  }
 //		driver.get("http://live.techpanda.org/index.php/");
-		driver.get("https://demo.nopcommerce.com/");
+		driver.get(GlobalConstants.FO_PAGE_URL);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		return driver;

@@ -16,15 +16,15 @@ import org.testng.annotations.Test;
 
 import commons.BasePage;
 import commons.BaseTest;
-import pageObjects.nopcommerce.HomePageObject;
-import pageObjects.nopcommerce.PageGeneratorManager;
-import pageObjects.nopcommerce.RegisterPageObject;
+import commons.PageGeneratorManager;
+import pageObjects.nopcommerce.User.UserHomePageObject;
+import pageObjects.nopcommerce.User.UserRegisterPageObject;
 
 public class User_06_Register_PageGenerator_Manager extends BaseTest {
 	private WebDriver driver;
 	private String emailaddress,firstname,lastname,password,confirmpassword,invalidpassword,invalidemail;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
 
   @Parameters("browser")
   @BeforeClass
