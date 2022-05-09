@@ -8,5 +8,7 @@ public class BasePageUI {
 	public static final String LOGOUT_LINK_USER = "XPATH=//a[@class='ico-logout']";
 	public static final String LOGOUT_LINK_ADMIN ="XPATH=//a[text()='Logout']";
 	
+	public static String DYNAMIC_SIDER_LINK_BY_PAGE_NAME = "XPATH=//div[contains(@class,'account-navigation')]//a[text()='%s']";
 	
+	public static String DYNAMIC_FOOT_LINK_BY_PAGE_NAME = "XPATH=//div[contains(@class,'%s')]//a[text()='%s']";
 }
