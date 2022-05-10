@@ -94,37 +94,37 @@ public class User_07_Login_PageGenerator_Manager extends BaseTest {
 	  System.out.println("TC_03_My_Account - Step 02: Verify My Account Page");
 	  Assert.assertTrue(customerInfor.isMyAccountPageDisplay());
   }
-  
-  @Test
-  public void TC_04_Switch_Page() {
-	  // Customer Infor -> Address
-	  System.out.println("TC_04 - Step 01: Open Address Page");
-	  addressPage = customerInfor.openAddressPage(driver);
-	  
-	  // Address -> My Product Review
-	  System.out.println("TC_04 - Step 02: Open My Product Review Page");
-	  myProductReviewPage = addressPage.openMyProductReviewPage(driver);
-	  
-	  // My Product Review -> Reward Point
-	  System.out.println("TC_04 - Step 03: Open Reward Point Page");
-	  rewardPointPage = myProductReviewPage.openRewardwPointPage(driver);
-	  
-	  // Reward Point -> Address
-	  System.out.println("TC_04 - Step 04: Open Address Page");
-	  addressPage = rewardPointPage.openAddressPage(driver);
-	  
-	  // Address -> Reward Point
-	  System.out.println("TC_04 - Step 05: Open Reward Point Page");
-	  rewardPointPage = addressPage.openRewardwPointPage(driver);
-	  
-	  // Reward Point -> My Product Review
-	  System.out.println("TC_04 - Step 06: Open Rewadrd Page");
-	  myProductReviewPage = rewardPointPage.openMyProductReviewPage(driver);
-	  
-	  // My Product Review -> Address
-	  System.out.println("TC_04 - Step 07: Open Address Page");
-	  addressPage = myProductReviewPage.openAddressPage(driver);
-  }
+//  
+//  @Test
+//  public void TC_04_Switch_Page() {
+//	  // Customer Infor -> Address
+//	  System.out.println("TC_04 - Step 01: Open Address Page");
+//	  addressPage = customerInfor.openAddressPage(driver);
+//	  
+//	  // Address -> My Product Review
+//	  System.out.println("TC_04 - Step 02: Open My Product Review Page");
+//	  myProductReviewPage = addressPage.openMyProductReviewPage(driver);
+//	  
+//	  // My Product Review -> Reward Point
+//	  System.out.println("TC_04 - Step 03: Open Reward Point Page");
+//	  rewardPointPage = myProductReviewPage.openRewardwPointPage(driver);
+//	  
+//	  // Reward Point -> Address
+//	  System.out.println("TC_04 - Step 04: Open Address Page");
+//	  addressPage = rewardPointPage.openAddressPage(driver);
+//	  
+//	  // Address -> Reward Point
+//	  System.out.println("TC_04 - Step 05: Open Reward Point Page");
+//	  rewardPointPage = addressPage.openRewardwPointPage(driver);
+//	  
+//	  // Reward Point -> My Product Review
+//	  System.out.println("TC_04 - Step 06: Open Rewadrd Page");
+//	  myProductReviewPage = rewardPointPage.openMyProductReviewPage(driver);
+//	  
+//	  // My Product Review -> Address
+//	  System.out.println("TC_04 - Step 07: Open Address Page");
+//	  addressPage = myProductReviewPage.openAddressPage(driver);
+//  }
   
 
   @AfterClass

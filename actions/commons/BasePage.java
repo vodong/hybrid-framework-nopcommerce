@@ -16,10 +16,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageObjects.nopcommerce.Admin.AdminLoginPageObject;
-import pageObjects.nopcommerce.User.UserAddressPageObject;
 import pageObjects.nopcommerce.User.UserHomePageObject;
-import pageObjects.nopcommerce.User.UserMyProductReviewPageObject;
-import pageObjects.nopcommerce.User.UserRewardPointPageObject;
 import pageUIs.nopcommerce.user.BasePageUI;
 
 public class BasePage {
