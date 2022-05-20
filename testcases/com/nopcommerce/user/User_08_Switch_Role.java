@@ -84,7 +84,7 @@ public class User_08_Switch_Role extends BaseTest {
   @Test
   public void TC_03_Role_Admin() {
 	  System.out.println("TC_03_Role_Admin - Step 01: Open Login Page");
-	  userHomePage.openPageURL(driver, GlobalConstants.BO_PAGE_URL);
+	  userHomePage.openPageURL(driver, GlobalConstants.ADMIN_TESTING_URL);
 	  adminLoginPage = PageGeneratorManager.getadminLoginPage(driver);
 	  
 	  //Login as Admin role
@@ -100,7 +100,7 @@ public class User_08_Switch_Role extends BaseTest {
   @Test
   public void TC_04_Role_Admin_To_User() {
 	  System.out.println("TC_04_Role_Admin_To_User - Step 01: Open Login Page");
-	  adminLoginPage.openPageURL(driver, GlobalConstants.FO_PAGE_URL);
+	  adminLoginPage.openPageURL(driver, GlobalConstants.PORTAL_DEV_URL);
 	  userHomePage = PageGeneratorManager.getHomePage(driver);
 	  
 	  //Login as User role
