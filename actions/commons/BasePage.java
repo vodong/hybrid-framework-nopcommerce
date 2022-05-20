@@ -218,7 +218,7 @@ public class BasePage {
 		getWebElement(driver, parentXpath).click();
 		sleepInSecond(1);
 		
-		WebDriverWait explicitWait = new WebDriverWait(driver, 30);
+		WebDriverWait explicitWait = new WebDriverWait(driver, longtime);
 		
 		List <WebElement> allitems =  explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(childXpath)));
 		
@@ -345,7 +345,7 @@ public class BasePage {
 	}
 
 	protected boolean areJQueryAndJSLoadedSuccess(WebDriver driver) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, 30);
+		WebDriverWait explicitWait = new WebDriverWait(driver, longtime);
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 
 		ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
@@ -385,48 +385,48 @@ public class BasePage {
 	}
 	
 	protected void waitForElementVisible(WebDriver driver, String locatorType) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, 30);
+		WebDriverWait explicitWait = new WebDriverWait(driver, longtime);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locatorType)));
 	}
 		
 	protected void waitForElementVisible(WebDriver driver, String locatorType, String... dynamicValue) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, 30);
+		WebDriverWait explicitWait = new WebDriverWait(driver, longtime);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByLocator(getDynamicElement(locatorType, dynamicValue))));
 	}
 	
 	protected void waitForAllElementVisible(WebDriver driver, String locatorType) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, 30);
+		WebDriverWait explicitWait = new WebDriverWait(driver, longtime);
 		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(locatorType)));
 	}
 	
 	protected void waitForAllElementVisible(WebDriver driver, String locatorType, String... dynamicValue) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, 30);
+		WebDriverWait explicitWait = new WebDriverWait(driver, longtime);
 		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(getDynamicElement(locatorType, dynamicValue))));
 	}
 	
 	protected void waitForElementInVisible(WebDriver driver, String locatorType) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, 30);
+		WebDriverWait explicitWait = new WebDriverWait(driver, longtime);
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locatorType)));
 	}
 	
 	protected void waitForAllElementInVisible(WebDriver driver, String locatorType) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, 30);
+		WebDriverWait explicitWait = new WebDriverWait(driver, longtime);
 		explicitWait.until(ExpectedConditions.invisibilityOfAllElements(getListWebElements(driver, locatorType)));
 	}
 	
 	protected void waitForAllElementInVisible(WebDriver driver, String locatorType, String... dynamicValue) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, 30);
+		WebDriverWait explicitWait = new WebDriverWait(driver, longtime);
 		explicitWait.until(ExpectedConditions.invisibilityOfAllElements(getListWebElements(driver, getDynamicElement(locatorType, dynamicValue))));
 	}
 	
 	
 	protected void waitForElementClickable(WebDriver driver, String locatorType) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, 30);
+		WebDriverWait explicitWait = new WebDriverWait(driver, longtime);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByLocator(locatorType)));
 	}
 	
 	protected void waitForElementClickable(WebDriver driver, String locatorType, String... dynamicValue) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, 30);
+		WebDriverWait explicitWait = new WebDriverWait(driver, longtime);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByLocator(getDynamicElement(locatorType, dynamicValue))));
 	}
 	
@@ -478,6 +478,8 @@ public class BasePage {
 		}catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-}
+	}
+	
+	private long longtime = GlobalConstants.LONG_TIME;
 
 }

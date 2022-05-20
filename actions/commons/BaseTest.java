@@ -31,7 +31,7 @@ public class BaseTest {
 //		driver.get("http://live.techpanda.org/index.php/");
 		driver.get(GlobalConstants.PORTAL_DEV_URL);
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIME, TimeUnit.SECONDS);
 		return driver;
 	}
 }
