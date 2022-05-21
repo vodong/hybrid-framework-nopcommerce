@@ -6,6 +6,7 @@ import java.util.Set;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -151,7 +152,7 @@ public class BasePage {
 		return driver.findElement(getByLocator(locatorType));
 	}
 	
-	private List<WebElement> getListWebElements (WebDriver driver, String locatorType) {
+	public List<WebElement> getListWebElements (WebDriver driver, String locatorType) {
 		return driver.findElements(getByLocator(locatorType));
 	}
 	
@@ -299,6 +300,16 @@ public class BasePage {
 	protected void hoverMouseToElement(WebDriver driver, String locatorType) {
 		Actions action = new Actions(driver);
 		action.moveToElement(getWebElement(driver, locatorType)).perform();
+	}
+	
+	protected void pressKeyToElement(WebDriver driver, String locatorType, Keys key) {
+		Actions action = new Actions(driver);
+		action.sendKeys(getWebElement(driver, locatorType), key).perform();
+	}
+	
+	protected void pressKeyToElement(WebDriver driver, String locatorType, Keys key, String... dynamicValue) {
+		Actions action = new Actions(driver);
+		action.sendKeys(getWebElement(driver, getDynamicElement(locatorType, dynamicValue)), key).perform();
 	}
 
 	protected void scrollToBottomPage(WebDriver driver) {

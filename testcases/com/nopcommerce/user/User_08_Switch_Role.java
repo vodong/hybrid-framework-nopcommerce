@@ -84,7 +84,7 @@ public class User_08_Switch_Role extends BaseTest {
   @Test
   public void TC_03_Role_Admin() {
 	  System.out.println("TC_03_Role_Admin - Step 01: Open Login Page");
-	  userHomePage.openPageURL(driver, GlobalConstants.ADMIN_TESTING_URL);
+	  userHomePage.openPageURL(driver, GlobalConstants.ADMIN_DEV_URL);
 	  adminLoginPage = PageGeneratorManager.getadminLoginPage(driver);
 	  
 	  //Login as Admin role

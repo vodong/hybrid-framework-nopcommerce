@@ -34,4 +34,64 @@ public class BaseTest {
 		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIME, TimeUnit.SECONDS);
 		return driver;
 	}
+	
+	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
+		if(browserName.equals("firefox")) {
+//			  System.setProperty("webdriver.gecko.driver", projectPath + "\\browserdrivers\\geckodriver.exe");
+			  WebDriverManager.firefoxdriver().setup();
+			  driver = new FirefoxDriver(); 
+		  }else if(browserName.equals("chrome")) {
+//			  System.setProperty("webdriver.chrome.driver", projectPath + "\\browserdrivers\\chromedriver.exe");
+			  WebDriverManager.chromedriver().setup();
+			  driver = new ChromeDriver();
+		  }else if(browserName.equals("edge")) {
+//			  System.setProperty("webdriver.edge.driver", projectPath + "\\browserdrivers\\msedgedriver.exe");
+			  WebDriverManager.edgedriver().setup();
+			  driver = new ChromeDriver();
+		  }else {
+			  throw new RuntimeException("Browser name is invalid");
+		  }
+//		driver.get("http://live.techpanda.org/index.php/");
+		driver.get(appUrl);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIME, TimeUnit.SECONDS);
+		return driver;
+	}
+	
+//	protected WebDriver getBrowserDriver(String browserName, String environmentName) {
+//		if(browserName.equals("firefox")) {
+////			  System.setProperty("webdriver.gecko.driver", projectPath + "\\browserdrivers\\geckodriver.exe");
+//			  WebDriverManager.firefoxdriver().setup();
+//			  driver = new FirefoxDriver(); 
+//		  }else if(browserName.equals("chrome")) {
+////			  System.setProperty("webdriver.chrome.driver", projectPath + "\\browserdrivers\\chromedriver.exe");
+//			  WebDriverManager.chromedriver().setup();
+//			  driver = new ChromeDriver();
+//		  }else if(browserName.equals("edge")) {
+////			  System.setProperty("webdriver.edge.driver", projectPath + "\\browserdrivers\\msedgedriver.exe");
+//			  WebDriverManager.edgedriver().setup();
+//			  driver = new ChromeDriver();
+//		  }else {
+//			  throw new RuntimeException("Browser name is invalid");
+//		  }
+////		driver.get("http://live.techpanda.org/index.php/");
+//		driver.get(getEnvironmentUrl(environmentName));
+//		driver.manage().window().maximize();
+//		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIME, TimeUnit.SECONDS);
+//		return driver;
+//	}
+	
+	protected String getEnvironmentUrl(String environmentName) {
+		String url = null;
+		switch (environmentName) {
+		case "DEV":
+			url = GlobalConstants.PORTAL_DEV_URL;
+			break;
+		case "TEST":
+			url = GlobalConstants.PORTAL_TESTING_URL;
+			break;
+		}
+		return url;
+	}
+
 }
