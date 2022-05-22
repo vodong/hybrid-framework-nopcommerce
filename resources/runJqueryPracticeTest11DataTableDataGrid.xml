@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Nopcommerce">
+  
+	<parameter name="url" value="http://live.techpanda.org/index.php/customer/account/login/" />
+	<test name="Run on FireFox">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.nopcommerce.user.User_Practice_11_DataTable_DataGrid_II"/>
+		</classes>
+	  </test>
+</suite> <!-- Suite -->

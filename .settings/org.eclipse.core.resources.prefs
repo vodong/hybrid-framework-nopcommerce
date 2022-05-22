@@ -1,7 +1,13 @@
 eclipse.preferences.version=1
 encoding//actions/commons/BasePage.java=UTF-8
+encoding//actions/pageObject/jQuery/AdminDashBoardPageObject.java=UTF-8
+encoding//actions/pageObject/jQuery/AdminLoginPageObject.java=UTF-8
 encoding//actions/pageObject/jQuery/HomePageObject.java=UTF-8
+encoding//actions/pageObject/jQuery/MyAccountPageObject.java=UTF-8
+encoding//actions/pageObject/jQuery/RegisterPageObject.java=UTF-8
 encoding//javaTester/javaBasic/QuanLySinhVien.java=UTF-8
 encoding//javaTester/javaBasic/Topic_Array.java=UTF-8
 encoding//javaTester/javaBasic/Topic_StringFormat.java=UTF-8
-encoding//testcases/com/nopcommerce/user/User_10_DataTable_DataGrid.java=UTF-8
+encoding//testcases/com/nopcommerce/user/User_10_DataTable_DataGrid_I.java=UTF-8
+encoding//testcases/com/nopcommerce/user/User_11_DataTable_DataGrid_II.java=UTF-8
+encoding//testcases/com/nopcommerce/user/User_Practice_11_DataTable_DataGrid_II.java=UTF-8

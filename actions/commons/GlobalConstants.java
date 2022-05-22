@@ -18,5 +18,8 @@ public class GlobalConstants {
 	public static final long SHORT_TIME = 5;
 	public static final long LONG_TIME = 30;
 	public static final long RETRY_TEST__FAIL = 3;
+	
+	public static final String ADMIN_LIVE_GURU_99_URL = "http://live.techpanda.org/index.php/backendlogin/customer/";
+
 
 }

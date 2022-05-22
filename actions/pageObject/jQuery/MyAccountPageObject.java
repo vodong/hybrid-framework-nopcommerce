@@ -10,10 +10,10 @@ import org.openqa.selenium.WebElement;
 import commons.BasePage;
 import pageUIs.jQuery.HomePageUI;
 
-public class HomePageObject extends BasePage {
+public class MyAccountPageObject extends BasePage {
 	WebDriver driver;
 
-	public HomePageObject(WebDriver driver) {
+	public MyAccountPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 
@@ -108,6 +108,6 @@ public class HomePageObject extends BasePage {
 	public RegisterPageObject clickToRegisterLink() {
 		waitForElementClickable(driver, HomePageUI.CREATE_ACCOUNT_BUTTON);
 		clickToElement(driver, HomePageUI.CREATE_ACCOUNT_BUTTON);
-		return pageGeneratorManager.getRegisterPage(driver);
+		return null;
 	}
 }

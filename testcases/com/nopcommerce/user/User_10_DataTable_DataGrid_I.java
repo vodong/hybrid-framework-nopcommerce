@@ -13,7 +13,7 @@ import commons.BaseTest;
 import pageObject.jQuery.HomePageObject;
 import pageObject.jQuery.pageGeneratorManager;
 
-public class User_10_DataTable_DataGrid extends BaseTest {
+public class User_10_DataTable_DataGrid_I extends BaseTest {
 	HomePageObject homePage;
 	List<String> actualAllValues;
 	List<String> expectedAllValues;
@@ -53,12 +53,10 @@ public class User_10_DataTable_DataGrid extends BaseTest {
 	  homePage.enterToHeaderTextBoxByLabel("Females", "376880");
 	  homePage.enterToHeaderTextBoxByLabel("Males", "276472");
 	  homePage.enterToHeaderTextBoxByLabel("Total", "553353");
-	  
-	  
-	  
+ 
   }
   
-  @Test
+  
   public void Table_03_Enter_To_Header() {
 	  // Đọc dữ liệu của file country.txt ra
 	  // Lưu vào 1 List<String> = Expected value = expectedAllCountryValues

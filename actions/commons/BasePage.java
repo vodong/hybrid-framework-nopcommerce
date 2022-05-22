@@ -187,12 +187,12 @@ public class BasePage {
 	
 	protected void selectIteminDefaultDropDownList (WebDriver driver, String locatorType, String textitem) {
 		Select select = new Select(getWebElement(driver, locatorType));
-		select.selectByValue(textitem);
+		select.selectByVisibleText(textitem);
 	}
 	
 	protected void selectIteminDefaultDropDownList (WebDriver driver, String locatorType, String textitem, String... dynamicValue) {
 		Select select = new Select(getWebElement(driver, getDynamicElement(locatorType, dynamicValue)));
-		select.selectByValue(textitem);
+		select.selectByVisibleText(textitem);
 	}
 	
 	protected String getFirstSelectedItemDefaultDropdown (WebDriver driver, String locatorType) {
@@ -258,8 +258,15 @@ public class BasePage {
 		return getListWebElements(driver, getDynamicElement(locatorType, dynamicValue)).size();
 	}
 	
-	protected void checkToDefaultCheckBoxRadio(WebDriver driver, String locatorType) {
+	protected void checkToDefaultCheckBoxOrRadio(WebDriver driver, String locatorType) {
 		WebElement element = getWebElement(driver, locatorType);
+		if(!element.isSelected()) {
+			element.click();
+		}	
+	}
+	
+	protected void checkToDefaultCheckBoxOrRadio(WebDriver driver, String locatorType, String... dynamicValue) {
+		WebElement element = getWebElement(driver, getDynamicElement(locatorType, dynamicValue));
 		if(!element.isSelected()) {
 			element.click();
 		}	
@@ -267,6 +274,13 @@ public class BasePage {
 	
 	protected void uncheckToDefaultCheckBoxRadio(WebDriver driver, String locatorType) {
 		WebElement element = getWebElement(driver, locatorType);
+		if(element.isSelected()) {
+			element.click();
+		}	
+	}
+	
+	protected void uncheckToDefaultCheckBoxRadio(WebDriver driver, String locatorType, String... dynamicValue) {
+		WebElement element = getWebElement(driver, getDynamicElement(locatorType, dynamicValue));
 		if(element.isSelected()) {
 			element.click();
 		}	
