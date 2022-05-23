@@ -18,6 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageObjects.nopcommerce.Admin.AdminLoginPageObject;
 import pageObjects.nopcommerce.User.UserHomePageObject;
+import pageUIs.jQuery.BasePageJqueryUI;
 import pageUIs.nopcommerce.user.BasePageUI;
 
 public class BasePage {
@@ -178,8 +179,7 @@ public class BasePage {
 	
 	protected String getElementText (WebDriver driver, String locatorType) {
 		return getWebElement(driver, locatorType).getText();
-	}
-	
+	}	
 	
 	protected String getElementText (WebDriver driver, String locatorType, String... dynamicValue) {
 		return getWebElement(driver, getDynamicElement(locatorType, dynamicValue)).getText();
@@ -407,6 +407,16 @@ public class BasePage {
 		} else {
 			return false;
 		}
+	}
+	
+	public void upLoadMultipleFiles(WebDriver driver, String... fileNames) {
+		String filePath = GlobalConstants.UPLOAD_FILE;
+		String fullFileName = "";
+		for (String file : fileNames) {
+			fullFileName = fullFileName + filePath + file + "\n";
+		}
+		fullFileName = fullFileName.trim();
+		getWebElement(driver, BasePageJqueryUI.UPLOAD_FILE_TYPE).sendKeys(fullFileName);
 	}
 	
 	protected void waitForElementVisible(WebDriver driver, String locatorType) {

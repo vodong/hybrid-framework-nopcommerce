@@ -110,4 +110,27 @@ public class HomePageObject extends BasePage {
 		clickToElement(driver, HomePageUI.CREATE_ACCOUNT_BUTTON);
 		return pageGeneratorManager.getRegisterPage(driver);
 	}
+
+	public boolean isFileLoadedByName(String fileName) {
+		waitForElementVisible(driver, HomePageUI.FILE_NAME_LOADED, fileName);
+		return isElementDisplayed(driver, HomePageUI.FILE_NAME_LOADED, fileName);
+	}
+
+	public void clickToStartButton() {
+		List<WebElement> startButtons = getListWebElements(driver, HomePageUI.START_UPLOAD_BUTTON);
+		for (WebElement startButton : startButtons) {
+			startButton.click();
+			sleepInSecond(2);
+		}
+	}
+
+	public boolean isFileLinkUploadByName(String fileName) {
+		waitForElementVisible(driver, HomePageUI.FILE_NAME_UPLOADED_LINK, fileName);
+		return isElementDisplayed(driver, HomePageUI.FILE_NAME_UPLOADED_LINK, fileName);
+	}
+
+	public boolean isFileImageUploadByName(String fileName) {
+		waitForElementVisible(driver, HomePageUI.FILE_NAME_UPLOADED_IMAGE, fileName);
+		return isElementDisplayed(driver, HomePageUI.FILE_NAME_UPLOADED_IMAGE, fileName);
+	}
 }
