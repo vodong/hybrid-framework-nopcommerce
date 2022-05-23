@@ -25,11 +25,6 @@
 	<classpathentry exported="true" kind="lib" path="libwebdrivermanager/jsoup-1.13.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="libwebdrivermanager/slf4j-api-1.7.30.jar"/>
 	<classpathentry exported="true" kind="lib" path="libwebdrivermanager/webdrivermanager-4.2.0.jar"/>
-	<classpathentry kind="lib" path="libraries/commons-io-2.11.0.jar"/>
-	<classpathentry kind="lib" path="libraries/commons-io-2.11.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="libraries/commons-io-2.11.0-sources.jar"/>
-	<classpathentry kind="lib" path="libraries/commons-io-2.11.0-tests.jar"/>
-	<classpathentry kind="lib" path="libraries/commons-io-2.11.0-test-sources.jar"/>
 	<classpathentry kind="lib" path="libraries/org-apache-commons-logging.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
