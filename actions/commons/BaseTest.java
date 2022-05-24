@@ -2,6 +2,8 @@ package commons;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,7 +14,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	private WebDriver driver;
-//	private String projectPath = System.getProperty("user.dir");
+	protected final Log log;
+	
+	protected BaseTest() {
+		log = LogFactory.getLog(getClass());
+	}
 	
 	protected WebDriver getBrowserDriver(String browserName) {
 		if(browserName.equals("firefox")) {
@@ -100,9 +106,9 @@ public class BaseTest {
 		boolean pass = true;
 		try {
 			if (condition == true) {
-				System.out.println(" -------------------------- PASSED -------------------------- ");
+				log.info(" -------------------------- PASSED -------------------------- ");
 			} else {
-				System.out.println(" -------------------------- FAILED -------------------------- ");
+				log.info(" -------------------------- FAILED -------------------------- ");
 			}
 			Assert.assertTrue(condition);
 		} catch (Throwable e) {
@@ -114,13 +120,14 @@ public class BaseTest {
 		}
 		return pass;
 	}
+	
 	protected boolean verifyFalse(boolean condition) {
 		boolean pass = true;
 		try {
 			if (condition == false) {
-				System.out.println(" -------------------------- PASSED -------------------------- ");
+				log.info(" -------------------------- PASSED -------------------------- ");
 			} else {
-				System.out.println(" -------------------------- FAILED -------------------------- ");
+				log.info(" -------------------------- FAILED -------------------------- ");
 			}
 			Assert.assertFalse(condition);
 		} catch (Throwable e) {
