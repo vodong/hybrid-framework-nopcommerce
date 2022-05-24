@@ -15,8 +15,8 @@ public class GlobalConstants {
 	public static final String DRAG_DROP_HTML5 = PROJECT_PATH + File.separator + "dragDropHTML5";
 	public static final String AUTO_IT_SCRIPT = PROJECT_PATH + File.separator + "autoIT";
 	
-	public static final long SHORT_TIME = 5;
-	public static final long LONG_TIME = 30;
+	public static final long SHORT_TIME_OUT = 5;
+	public static final long LONG_TIME_OUT = 30;
 	public static final long RETRY_TEST__FAIL = 3;
 	
 	public static final String ADMIN_LIVE_GURU_99_URL = "http://live.techpanda.org/index.php/backendlogin/customer/";
