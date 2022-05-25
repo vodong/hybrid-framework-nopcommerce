@@ -1,18 +1,36 @@
-[INFO ] [2022-05-24 19:34:28,450] Register - Step 01: Open Register page
-[INFO ] [2022-05-24 19:34:29,208] Register - Step 02: Enter To Firstname textbox with value 'A'
-[INFO ] [2022-05-24 19:34:29,289] Register - Step 03: Enter To Lastname textbox with value 'T'
-[INFO ] [2022-05-24 19:34:29,368] Register - Step 04: Enter To Email textbox with value 'frameworkdpv_8641@yopmail.com'
-[INFO ] [2022-05-24 19:34:29,452] Register - Step 05: Enter To Password textbox with value '123456'
-[INFO ] [2022-05-24 19:34:29,524] Register - Step 06: Enter To Confirm Password textbox with value '123456'
-[INFO ] [2022-05-24 19:34:29,603] Register - Step 07: Click to 'Register' button
-[INFO ] [2022-05-24 19:34:30,851] Register - Step 08: Verify Register success message is displayed
-[INFO ] [2022-05-24 19:34:30,898] Register - Step 09: Click to Logout link
-[INFO ] [2022-05-24 19:34:32,052] Login - Step 01: Navigate to Login page
-[INFO ] [2022-05-24 19:34:32,859] Login - Step 02: Enter To Email textbox with value 'frameworkdpv_8641@yopmail.com'
-[INFO ] [2022-05-24 19:34:32,946] Login - Step 03: Enter To Password textbox with value '123456'
-[INFO ] [2022-05-24 19:34:33,022] Login - Step 04: Click to 'Login' button
-[INFO ] [2022-05-24 19:34:34,169] Login - Step 05: Verify 'My Account' link is displayed
-[INFO ] [2022-05-24 19:34:34,239]  -------------------------- FAILED -------------------------- 
-[INFO ] [2022-05-24 19:34:34,239] Login - Step 06: Navigation to My Account page
-[INFO ] [2022-05-24 19:34:34,950] Login - Step 07: Verify 'Customer Infor' page is displayed
-[INFO ] [2022-05-24 19:34:35,014]  -------------------------- FAILED -------------------------- 
+[INFO ] [2022-05-25 08:17:40,458] Register - Step 01: Open Register page
+[INFO ] [2022-05-25 08:17:41,030] Register - Step 02: Enter To Firstname textbox with value 'A'
+[INFO ] [2022-05-25 08:17:41,139] Register - Step 03: Enter To Lastname textbox with value 'T'
+[INFO ] [2022-05-25 08:17:41,235] Register - Step 04: Enter To Email textbox with value 'frameworkdpv_2427@yopmail.com'
+[INFO ] [2022-05-25 08:17:41,347] Register - Step 05: Enter To Password textbox with value '123456'
+[INFO ] [2022-05-25 08:17:41,427] Register - Step 06: Enter To Confirm Password textbox with value '123456'
+[INFO ] [2022-05-25 08:17:41,508] Register - Step 07: Click to 'Register' button
+[INFO ] [2022-05-25 08:17:42,448] Register - Step 08: Verify Register success message is displayed
+[INFO ] [2022-05-25 08:17:42,490] Register - Step 09: Click to Logout link
+[INFO ] [2022-05-25 08:17:43,278] Login - Step 01: Navigate to Login page
+[INFO ] [2022-05-25 08:17:44,076] Login - Step 02: Enter To Email textbox with value 'frameworkdpv_2427@yopmail.com'
+[INFO ] [2022-05-25 08:17:44,196] Login - Step 03: Enter To Password textbox with value '123456'
+[INFO ] [2022-05-25 08:17:44,439] Login - Step 04: Click to 'Login' button
+[INFO ] [2022-05-25 08:17:45,199] Login - Step 05: Verify 'My Account' link is displayed
+[INFO ] [2022-05-25 08:17:45,248]  -------------------------- FAILED -------------------------- 
+[INFO ] [2022-05-25 08:17:45,248] Login - Step 06: Navigation to My Account page
+[INFO ] [2022-05-25 08:17:46,127] Login - Step 07: Verify 'Customer Infor' page is displayed
+[INFO ] [2022-05-25 08:17:46,189]  -------------------------- FAILED -------------------------- 
+[INFO ] [2022-05-25 08:17:50,945] Register - Step 01: Open Register page
+[INFO ] [2022-05-25 08:17:51,521] Register - Step 02: Enter To Firstname textbox with value 'A'
+[INFO ] [2022-05-25 08:17:51,631] Register - Step 03: Enter To Lastname textbox with value 'T'
+[INFO ] [2022-05-25 08:17:51,729] Register - Step 04: Enter To Email textbox with value 'frameworkdpv_4779@yopmail.com'
+[INFO ] [2022-05-25 08:17:51,814] Register - Step 05: Enter To Password textbox with value '123456'
+[INFO ] [2022-05-25 08:17:51,897] Register - Step 06: Enter To Confirm Password textbox with value '123456'
+[INFO ] [2022-05-25 08:17:51,982] Register - Step 07: Click to 'Register' button
+[INFO ] [2022-05-25 08:17:52,840] Register - Step 08: Verify Register success message is displayed
+[INFO ] [2022-05-25 08:17:52,872] Register - Step 09: Click to Logout link
+[INFO ] [2022-05-25 08:17:53,700] Login - Step 01: Navigate to Login page
+[INFO ] [2022-05-25 08:17:54,189] Login - Step 02: Enter To Email textbox with value 'frameworkdpv_4779@yopmail.com'
+[INFO ] [2022-05-25 08:17:54,263] Login - Step 03: Enter To Password textbox with value '123456'
+[INFO ] [2022-05-25 08:17:54,328] Login - Step 04: Click to 'Login' button
+[INFO ] [2022-05-25 08:17:55,176] Login - Step 05: Verify 'My Account' link is displayed
+[INFO ] [2022-05-25 08:17:55,214]  -------------------------- FAILED -------------------------- 
+[INFO ] [2022-05-25 08:17:55,214] Login - Step 06: Navigation to My Account page
+[INFO ] [2022-05-25 08:17:55,865] Login - Step 07: Verify 'Customer Infor' page is displayed
+[INFO ] [2022-05-25 08:17:55,912]  -------------------------- FAILED -------------------------- 
