@@ -151,4 +151,9 @@ public class BaseTest {
 		}
 		return pass;
 	}
+
+	
+	public WebDriver getDriverInstance() {
+		return this.driver;
+	}
 }
