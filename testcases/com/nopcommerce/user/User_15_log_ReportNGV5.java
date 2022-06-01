@@ -50,7 +50,7 @@ public class User_15_log_ReportNGV5 extends BaseTest {
 	  ExtentTestManager.startTest(method.getName(), "Register to system with valid Email and Password");
 	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 01: Open Register page");
 
-	  registerPage = homePage.clickToRegisterLink();
+	  registerPage = homePage.openRegisterPage();
 
 	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 02: Enter To Firstname textbox with value '" + firstname + "'");
 	  registerPage.inputToFirstNameTextBox(firstname);

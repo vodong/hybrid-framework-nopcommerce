@@ -51,7 +51,7 @@ public class User_05_Multiple_Browser extends BaseTest {
   public void TC_01_Register_With_Empty_Data() {
 	  
 	  System.out.println("Home Page - Step 01: Click to Register link");
-	  homePage.clickToRegisterLink();
+	  homePage.openRegisterPage();
 	  
 	  System.out.println("Register Page - Step 02: Click to Register button");
 	  registerPage.clickToRegisterButton();
@@ -67,7 +67,7 @@ public class User_05_Multiple_Browser extends BaseTest {
   public void TC_02_Register_Invalid_Email() {
 	  
 	  System.out.println("Home Page - Step 01: Click to Register link");
-	  homePage.clickToRegisterLink();
+	  homePage.openRegisterPage();
 	  
 	  System.out.println("Register Page - Step 02: Input Data");
 	  registerPage.inputToFirstNameTextBox(firstname);
@@ -88,7 +88,7 @@ public class User_05_Multiple_Browser extends BaseTest {
   public void TC_03_Register_With_Valid_Information() { 
 	  
 	  System.out.println("Home Page - Step 01: Click to Register link");
-	  homePage.clickToRegisterLink();
+	  homePage.openRegisterPage();
 	  
 	  System.out.println("Register Page - Step 02: Input Data");
 	  registerPage.inputToFirstNameTextBox(firstname);
@@ -110,7 +110,7 @@ public class User_05_Multiple_Browser extends BaseTest {
   
   public void TC_04_Register_With_Email_Existed() {
 	  System.out.println("Home Page - Step 01: Click to Register link");
-	  homePage.clickToRegisterLink();
+	  homePage.openRegisterPage();
 	  
 	  System.out.println("Register Page - Step 02: Input Data");
 	  registerPage.inputToFirstNameTextBox(firstname);
@@ -130,7 +130,7 @@ public class User_05_Multiple_Browser extends BaseTest {
  
   public void TC_05_Register_Password_Less_Than_6_Characters() {
 	  System.out.println("Home Page - Step 01: Click to Register link");
-	  homePage.clickToRegisterLink();
+	  homePage.openRegisterPage();
 	  
 	  System.out.println("Register Page - Step 02: Input Data");
 	  registerPage.inputToFirstNameTextBox(firstname);
@@ -150,7 +150,7 @@ public class User_05_Multiple_Browser extends BaseTest {
   
   public void TC_06_Register_With_Incorrect_Confirm_Password() {
 	  System.out.println("Home Page - Step 01: Click to Register link");
-	  homePage.clickToRegisterLink();
+	  homePage.openRegisterPage();
 	  
 	  System.out.println("Register Page - Step 02: Input Data");
 	  registerPage.inputToFirstNameTextBox(firstname);

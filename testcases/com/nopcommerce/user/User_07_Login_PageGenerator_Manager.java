@@ -50,7 +50,7 @@ public class User_07_Login_PageGenerator_Manager extends BaseTest {
   public void TC_01_Register() { 
 	  
 	  System.out.println("TC_01_Register - Step 01: Click to Register link");
-	  registerPage = homePage.clickToRegisterLink();
+	  registerPage = homePage.openRegisterPage();
 	  
 	  System.out.println("TC_01_Register - Step 02: Input Data");
 	  registerPage.inputToFirstNameTextBox(firstname);

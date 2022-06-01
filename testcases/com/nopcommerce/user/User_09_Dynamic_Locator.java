@@ -48,7 +48,7 @@ public class User_09_Dynamic_Locator extends BaseTest {
 
   @Test
   public void TC_01_Register_Login() { 
-	  registerPage = homePage.clickToRegisterLink();
+	  registerPage = homePage.openRegisterPage();
 	  
 	  registerPage.inputToFirstNameTextBox(firstname);
 	  registerPage.inputToLastNameTextBox(lastname);

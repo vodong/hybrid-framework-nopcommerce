@@ -1,29 +1,29 @@
-package com.nopcommerce.user;
+package com.nopcommerce.common;
 
 import java.util.Random;
+import java.util.Set;
 
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
 import commons.BaseTest;
 import commons.PageGeneratorManager;
-import pageObjects.nopcommerce.User.UserCustomerInfoPageObject;
 import pageObjects.nopcommerce.User.UserHomePageObject;
 import pageObjects.nopcommerce.User.UserLoginPageObject;
 import pageObjects.nopcommerce.User.UserRegisterPageObject;
 
-public class User_15_log_ReportNG extends BaseTest {
+public class Common_01_Register_Cookie extends BaseTest {
 	private WebDriver driver;
-	private String emailaddress,firstname,lastname,password,confirmpassword;
+	private String firstname,lastname, emailaddress, password;
 	private UserHomePageObject homePage;
 	private UserRegisterPageObject registerPage;
 	private UserLoginPageObject loginPage;
-	private UserCustomerInfoPageObject customerInfor;
+	public static Set<Cookie> loggedCookies;
 
   @Parameters("browser")
-  @BeforeClass
+  @BeforeTest(description = "Create new User for all Classes Test")
   public void beforeClass(String browserName) {
 	  driver = getBrowserDriver(browserName);
 	  homePage = PageGeneratorManager.getHomePage(driver);
@@ -33,11 +33,7 @@ public class User_15_log_ReportNG extends BaseTest {
 	  firstname = "A";
 	  lastname = "T";
 	  password = "123456";
-	  confirmpassword = "123456";
-  }
-  
-  @Test
-  public void TC_01_Register() { 
+	  
 	  log.info("Register - Step 01: Open Register page");
 	  registerPage = homePage.openRegisterPage();
 	  
@@ -53,45 +49,32 @@ public class User_15_log_ReportNG extends BaseTest {
 	  log.info("Register - Step 05: Enter To Password textbox with value '" + password + "'");
 	  registerPage.inputToPasswordTextBox(password);
 	  
-	  log.info("Register - Step 06: Enter To Confirm Password textbox with value '" + confirmpassword + "'");
-	  registerPage.inputToConfirmPasswordTextBox(confirmpassword);
+	  log.info("Register - Step 06: Enter To Confirm Password textbox with value '" + password + "'");
+	  registerPage.inputToConfirmPasswordTextBox(password);
 	  
 	  log.info("Register - Step 07: Click to 'Register' button");
 	  registerPage.clickToRegisterButton();
 	  
 	  log.info("Register - Step 08: Verify Register success message is displayed");
-	  verifyEquals(registerPage.getEmailSuccessMessage(), "Your registration completed...");
+	  verifyEquals(registerPage.getEmailSuccessMessage(), "Your registration completed");
 	  
 	  log.info("Register - Step 09: Click to Logout link");
-	  homePage = registerPage.clickToLogoutButton();	  
-  }
-
-  @Test
-  public void TC_02_Login() { 
-	  log.info("Login - Step 01: Navigate to Login page");
+	  homePage = registerPage.clickToLogoutButton();	 
+	  
+	  log.info("Login - Step 10: Navigate to Login page");
 	  loginPage = homePage.clickToLoginLink();
 	  
-	  log.info("Login - Step 02: Enter To Email textbox with value '" + emailaddress + "'");
+	  log.info("Login - Step 11: Enter To Email textbox with value '" + emailaddress + "'");
 	  loginPage.inputToEmailTextBox(emailaddress);
 	  
-	  log.info("Login - Step 03: Enter To Password textbox with value '" + password + "'");
+	  log.info("Login - Step 12: Enter To Password textbox with value '" + password + "'");
 	  loginPage.inputToPasswordTextBox(password);
 	  
-	  log.info("Login - Step 04: Click to 'Login' button");
+	  log.info("Login - Step 13: Click to 'Login' button");
 	  homePage = loginPage.clickToLoginButton();
 	  
-	  log.info("Login - Step 05: Verify 'My Account' link is displayed");
-	  verifyFalse(homePage.isMyAccountLinkDisplay()); //verifyTrue
+	  loggedCookies = homePage.getAllCookies(driver);
 	  
-	  log.info("Login - Step 06: Navigation to My Account page");
-	  customerInfor = homePage.clickMyAccountLink();
-	  
-	  log.info("Login - Step 07: Verify 'Customer Infor' page is displayed");
-	  verifyFalse(customerInfor.isMyAccountPageDisplay()); //verifyTrue
-  }
-
-  @AfterClass
-  public void afterClass() {
 	  driver.quit();
   }
   

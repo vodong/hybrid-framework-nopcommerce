@@ -49,7 +49,7 @@ public class User_08_Switch_Role extends BaseTest {
   public void TC_01_Register() { 
 	  
 	  System.out.println("TC_01_Register - Step 01: Click to Register link");
-	  userRegisterPage = userHomePage.clickToRegisterLink();
+	  userRegisterPage = userHomePage.openRegisterPage();
 	  
 	  System.out.println("TC_01_Register - Step 02: Input Data");
 	  userRegisterPage.inputToFirstNameTextBox(firstname);

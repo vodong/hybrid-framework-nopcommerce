@@ -39,7 +39,7 @@ public class User_15_log_ReportNG2 extends BaseTest {
   @Test
   public void TC_01_Register() { 
 	  log.info("Register - Step 01: Open Register page");
-	  registerPage = homePage.clickToRegisterLink();
+	  registerPage = homePage.openRegisterPage();
 	  
 	  log.info("Register - Step 02: Enter To Firstname textbox with value '" + firstname + "'");
 	  registerPage.inputToFirstNameTextBox(firstname);

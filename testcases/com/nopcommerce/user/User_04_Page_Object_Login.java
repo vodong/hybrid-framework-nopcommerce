@@ -47,7 +47,7 @@ public class User_04_Page_Object_Login extends BasePage {
 	  loginPage = new UserLoginPageObject(driver);
 	  driver.manage().window().maximize();
 	  
-	  homePage.clickToRegisterLink();
+	  homePage.openRegisterPage();
 	  
 	  registerPage.inputToFirstNameTextBox(firstname);
 	  registerPage.inputToLastNameTextBox(lastname);

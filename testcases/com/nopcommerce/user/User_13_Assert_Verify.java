@@ -44,7 +44,7 @@ public class User_13_Assert_Verify extends BaseTest {
 
   @Test
   public void TC_01_Register_Login() { 
-	  registerPage = homePage.clickToRegisterLink();
+	  registerPage = homePage.openRegisterPage();
 	  
 	  registerPage.inputToFirstNameTextBox(firstname);
 	  registerPage.inputToLastNameTextBox(lastname);
