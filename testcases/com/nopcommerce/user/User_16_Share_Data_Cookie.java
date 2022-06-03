@@ -32,7 +32,7 @@ public class User_16_Share_Data_Cookie extends BaseTest {
 	  password = Common_01_Register_End_User.password;
 	  
 	  log.info("Pre-Condition - Step 01: Navigate to Login page");
-	  loginPage = homePage.clickToLoginLink();
+	  loginPage = homePage.openLoginPage();
 	  
 	  log.info("Pre-Condition - Step 02: Set cookie and reload page");
 	  loginPage.setCookies(driver, Common_01_Register_Cookie.loggedCookies);

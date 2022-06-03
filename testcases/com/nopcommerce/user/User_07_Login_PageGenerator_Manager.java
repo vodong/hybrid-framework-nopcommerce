@@ -72,7 +72,7 @@ public class User_07_Login_PageGenerator_Manager extends BaseTest {
   @Test
   public void TC_02_Login() {
 	  System.out.println("TC_02_Login - Step 01: Click to Login link");
-	  loginPage = homePage.clickToLoginLink();
+	  loginPage = homePage.openLoginPage();
 	  
 	  System.out.println("TC_02_Login - Step 02: Input Data");
 	  loginPage.inputToEmailTextBox(emailaddress);

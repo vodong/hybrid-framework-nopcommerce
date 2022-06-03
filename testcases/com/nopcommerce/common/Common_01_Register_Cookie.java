@@ -62,7 +62,7 @@ public class Common_01_Register_Cookie extends BaseTest {
 	  homePage = registerPage.clickToLogoutButton();	 
 	  
 	  log.info("Login - Step 10: Navigate to Login page");
-	  loginPage = homePage.clickToLoginLink();
+	  loginPage = homePage.openLoginPage();
 	  
 	  log.info("Login - Step 11: Enter To Email textbox with value '" + emailaddress + "'");
 	  loginPage.inputToEmailTextBox(emailaddress);

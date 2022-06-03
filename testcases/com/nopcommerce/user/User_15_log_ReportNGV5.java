@@ -81,7 +81,7 @@ public class User_15_log_ReportNGV5 extends BaseTest {
   public void TC_02_Login(Method method) { 
 	  ExtentTestManager.startTest(method.getName(), "Login to system with valid Email and Password");
 	  ExtentTestManager.getTest().log(Status.INFO,"Login - Step 01: Navigate to Login page");
-	  loginPage = homePage.clickToLoginLink();
+	  loginPage = homePage.openLoginPage();
 	  
 	  ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02: Enter To Email textbox with value '" + emailaddress + "'");
 	  loginPage.inputToEmailTextBox(emailaddress);

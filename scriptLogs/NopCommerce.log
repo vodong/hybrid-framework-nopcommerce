@@ -120,3 +120,68 @@
 [INFO ] [2022-05-25 08:17:55,214] Login - Step 06: Navigation to My Account page
 [INFO ] [2022-05-25 08:17:55,865] Login - Step 07: Verify 'Customer Infor' page is displayed
 [INFO ] [2022-05-25 08:17:55,912]  -------------------------- FAILED -------------------------- 
+[INFO ] [2022-06-03 13:45:47,843] Register - Step 01: Open Register page
+[INFO ] [2022-06-03 13:45:48,461] Register - Step 02: Enter To Firstname textbox with value 'A'
+[INFO ] [2022-06-03 13:45:48,532] Register - Step 03: Enter To Lastname textbox with value 'T'
+[INFO ] [2022-06-03 13:45:48,586] Register - Step 04: Enter To Email textbox with value 'frameworkdpv_1437@yopmail.com'
+[INFO ] [2022-06-03 13:45:48,654] Register - Step 05: Enter To Password textbox with value '123456'
+[INFO ] [2022-06-03 13:45:48,714] Register - Step 06: Enter To Confirm Password textbox with value '123456'
+[INFO ] [2022-06-03 13:45:48,774] Register - Step 07: Click to 'Register' button
+[INFO ] [2022-06-03 13:45:49,714] Register - Step 08: Verify Register success message is displayed
+[INFO ] [2022-06-03 13:45:49,761] Register - Step 09: Click to Logout link
+[INFO ] [2022-06-03 13:51:05,789] Register - Step 01: Open Register page
+[INFO ] [2022-06-03 13:51:06,531] Register - Step 02: Enter To Firstname textbox with value 'A'
+[INFO ] [2022-06-03 13:51:06,610] Register - Step 03: Enter To Lastname textbox with value 'T'
+[INFO ] [2022-06-03 13:51:06,661] Register - Step 04: Enter To Email textbox with value 'frameworkdpv_6942@yopmail.com'
+[INFO ] [2022-06-03 13:51:06,729] Register - Step 05: Enter To Password textbox with value '123456'
+[INFO ] [2022-06-03 13:51:06,787] Register - Step 06: Enter To Confirm Password textbox with value '123456'
+[INFO ] [2022-06-03 13:51:06,844] Register - Step 07: Click to 'Register' button
+[INFO ] [2022-06-03 13:51:07,698] Register - Step 08: Verify Register success message is displayed
+[INFO ] [2022-06-03 13:54:02,887] Register - Step 01: Open Register page
+[INFO ] [2022-06-03 13:54:03,447] Register - Step 02: Enter To Firstname textbox with value 'A'
+[INFO ] [2022-06-03 13:54:03,521] Register - Step 03: Enter To Lastname textbox with value 'T'
+[INFO ] [2022-06-03 13:54:03,581] Register - Step 04: Enter To Email textbox with value 'frameworkdpv_2223@yopmail.com'
+[INFO ] [2022-06-03 13:54:03,648] Register - Step 05: Enter To Password textbox with value '123456'
+[INFO ] [2022-06-03 13:54:03,705] Register - Step 06: Enter To Confirm Password textbox with value '123456'
+[INFO ] [2022-06-03 13:54:03,770] Register - Step 07: Click to 'Register' button
+[INFO ] [2022-06-03 13:54:04,618] Register - Step 08: Verify Register success message is displayed
+[INFO ] [2022-06-03 13:58:49,853] Register - Step 01: Open Register page
+[INFO ] [2022-06-03 13:58:50,513] Register - Step 02: Enter To Firstname textbox with value 'A'
+[INFO ] [2022-06-03 13:58:50,581] Register - Step 03: Enter To Lastname textbox with value 'T'
+[INFO ] [2022-06-03 13:58:50,642] Register - Step 04: Enter To Email textbox with value 'frameworkdpv_9969@yopmail.com'
+[INFO ] [2022-06-03 13:58:50,710] Register - Step 05: Enter To Password textbox with value '123456'
+[INFO ] [2022-06-03 13:58:50,762] Register - Step 06: Enter To Confirm Password textbox with value '123456'
+[INFO ] [2022-06-03 13:58:50,826] Register - Step 07: Click to 'Register' button
+[INFO ] [2022-06-03 13:58:51,702] Register - Step 08: Verify Register success message is displayed
+[INFO ] [2022-06-03 13:58:52,983] OS name = mac os x
+[INFO ] [2022-06-03 13:58:52,984] Driver instance name = firefoxdriver: firefox on mac (f249f00e-2256-411b-93c0-bc6d08f82602)
+[INFO ] [2022-06-03 14:00:49,355] Register - Step 01: Open Register page
+[INFO ] [2022-06-03 14:00:49,970] Register - Step 02: Enter To Firstname textbox with value 'A'
+[INFO ] [2022-06-03 14:00:50,039] Register - Step 03: Enter To Lastname textbox with value 'T'
+[INFO ] [2022-06-03 14:00:50,093] Register - Step 04: Enter To Email textbox with value 'frameworkdpv_5035@yopmail.com'
+[INFO ] [2022-06-03 14:00:50,161] Register - Step 05: Enter To Password textbox with value '123456'
+[INFO ] [2022-06-03 14:00:50,212] Register - Step 06: Enter To Confirm Password textbox with value '123456'
+[INFO ] [2022-06-03 14:00:50,274] Register - Step 07: Click to 'Register' button
+[INFO ] [2022-06-03 14:00:51,336] Register - Step 08: Verify Register success message is displayed
+[INFO ] [2022-06-03 14:00:52,715] OS name = mac os x
+[INFO ] [2022-06-03 14:00:52,716] Driver instance name = firefoxdriver: firefox on mac (8a51226b-a136-4316-9554-68cb1d039ac4)
+[INFO ] [2022-06-03 14:02:22,717] Register - Step 01: Open Register page
+[INFO ] [2022-06-03 14:02:23,306] Register - Step 02: Enter To Firstname textbox with value 'A'
+[INFO ] [2022-06-03 14:02:23,379] Register - Step 03: Enter To Lastname textbox with value 'T'
+[INFO ] [2022-06-03 14:02:23,434] Register - Step 04: Enter To Email textbox with value 'frameworkdpv_8344@yopmail.com'
+[INFO ] [2022-06-03 14:02:23,501] Register - Step 05: Enter To Password textbox with value '123456'
+[INFO ] [2022-06-03 14:02:23,561] Register - Step 06: Enter To Confirm Password textbox with value '123456'
+[INFO ] [2022-06-03 14:02:23,628] Register - Step 07: Click to 'Register' button
+[INFO ] [2022-06-03 14:02:24,525] Register - Step 08: Verify Register success message is displayed
+[INFO ] [2022-06-03 14:02:25,962] OS name = mac os x
+[INFO ] [2022-06-03 14:02:25,963] Driver instance name = firefoxdriver: firefox on mac (cc1842eb-139b-45f4-b059-d10a52f186c6)
+[INFO ] [2022-06-03 14:08:07,467] Register - Step 01: Open Register page
+[INFO ] [2022-06-03 14:08:08,382] Register - Step 02: Enter To Firstname textbox with value 'A'
+[INFO ] [2022-06-03 14:08:08,696] Register - Step 03: Enter To Lastname textbox with value 'T'
+[INFO ] [2022-06-03 14:08:08,825] Register - Step 04: Enter To Email textbox with value 'frameworkdpv_4945@yopmail.com'
+[INFO ] [2022-06-03 14:08:08,945] Register - Step 05: Enter To Password textbox with value '123456'
+[INFO ] [2022-06-03 14:08:09,258] Register - Step 06: Enter To Confirm Password textbox with value '123456'
+[INFO ] [2022-06-03 14:08:09,477] Register - Step 07: Click to 'Register' button
+[INFO ] [2022-06-03 14:08:10,815] Register - Step 08: Verify Register success message is displayed
+[INFO ] [2022-06-03 14:08:13,072] OS name = mac os x
+[INFO ] [2022-06-03 14:08:13,073] Driver instance name = chromedriver: chrome on mac (f44a88a291c840d05e51e96f90925915)

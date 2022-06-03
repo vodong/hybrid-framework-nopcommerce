@@ -57,7 +57,7 @@ public class User_13_Assert_Verify extends BaseTest {
 	  verifyEquals(registerPage.getEmailSuccessMessage(), "Your registration completed...");
 	  
 	  registerPage.clickToLogoutButton();
-	  loginPage = homePage.clickToLoginLink();
+	  loginPage = homePage.openLoginPage();
 	  
 	  loginPage.inputToEmailTextBox(emailaddress);
 	  loginPage.inputToPasswordTextBox(password);

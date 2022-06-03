@@ -31,7 +31,7 @@ public class User_17_Custom_Close_Browser extends BaseTest {
 	  password = Common_01_Register_End_User.password;
 	  
 	  log.info("Login - Step 01: Navigate to Login page");
-	  loginPage = homePage.clickToLoginLink();
+	  loginPage = homePage.openLoginPage();
 	  
 	  log.info("Login - Step 02: Enter To Email textbox with value '" + emailaddress + "'");
 	  loginPage.inputToEmailTextBox(emailaddress);

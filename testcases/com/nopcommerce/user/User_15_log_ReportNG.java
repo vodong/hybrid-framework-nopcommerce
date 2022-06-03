@@ -69,7 +69,7 @@ public class User_15_log_ReportNG extends BaseTest {
   @Test
   public void TC_02_Login() { 
 	  log.info("Login - Step 01: Navigate to Login page");
-	  loginPage = homePage.clickToLoginLink();
+	  loginPage = homePage.openLoginPage();
 	  
 	  log.info("Login - Step 02: Enter To Email textbox with value '" + emailaddress + "'");
 	  loginPage.inputToEmailTextBox(emailaddress);

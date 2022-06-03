@@ -71,7 +71,7 @@ public class User_08_Switch_Role extends BaseTest {
   @Test
   public void TC_02_Role_User_To_Admin() {
 	  System.out.println("TC_02_Role_User_To_Admin - Step 01: Click to Login link");
-	  userLoginPage = userHomePage.clickToLoginLink();
+	  userLoginPage = userHomePage.openLoginPage();
 	  
 	  //Login as User role
 	  System.out.println("TC_02_Login - Step 02: Input Data");
@@ -105,7 +105,7 @@ public class User_08_Switch_Role extends BaseTest {
 	  
 	  //Login as User role
 	  System.out.println("TC_03_Role_Admin - Step 03: Open Login Page");
-	  userLoginPage = userHomePage.clickToLoginLink();
+	  userLoginPage = userHomePage.openLoginPage();
 	  
 	  System.out.println("TC_03_Role_Admin - Step 03: Input Data");
 	  userHomePage = userLoginPage.loginAsUser(emailaddress, password);

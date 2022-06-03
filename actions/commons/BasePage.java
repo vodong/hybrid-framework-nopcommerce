@@ -546,7 +546,27 @@ public class BasePage {
 		return PageGeneratorManager.getadminLoginPage(driver);
 	}
 
+	/** Enter to dynamic textbox by ID
+	 * @param driver
+	 * @param textboxID
+	 * @param value
+	 */
+	public void inputToTextBoxByID(WebDriver driver, String textboxID, String value ) {
+		waitForAllElementVisible(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+		sendkeyToElement(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, value, textboxID);
+		
+	}
 	
+	/** Click to dynamic Button By Text
+	 * @param driver
+	 * @param buttonText
+	 */
+	public void clickToButtonByText(WebDriver driver, String buttonText) {
+		waitForElementClickable(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_NAME, buttonText);
+		clickToElement(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_NAME, buttonText);
+	}
+
+
 
 	public void sleepInSecond (long second) {
 		try {

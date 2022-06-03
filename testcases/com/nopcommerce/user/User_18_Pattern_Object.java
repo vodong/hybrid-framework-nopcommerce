@@ -1,5 +1,7 @@
 package com.nopcommerce.user;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.Random;
 
 import org.openqa.selenium.WebDriver;
@@ -14,7 +16,7 @@ import pageObjects.nopcommerce.User.UserHomePageObject;
 import pageObjects.nopcommerce.User.UserLoginPageObject;
 import pageObjects.nopcommerce.User.UserRegisterPageObject;
 
-public class User_15_log_ReportNG2 extends BaseTest {
+public class User_18_Pattern_Object extends BaseTest {
 	private WebDriver driver;
 	private String emailaddress,firstname,lastname,password,confirmpassword;
 	private UserHomePageObject homePage;
@@ -42,57 +44,58 @@ public class User_15_log_ReportNG2 extends BaseTest {
 	  registerPage = homePage.openRegisterPage();
 	  
 	  log.info("Register - Step 02: Enter To Firstname textbox with value '" + firstname + "'");
-	  registerPage.inputToFirstNameTextBox(firstname);
+	  registerPage.inputToTextBoxByID(driver, "FirstName", firstname);
 	  
 	  log.info("Register - Step 03: Enter To Lastname textbox with value '" + lastname + "'");
-	  registerPage.inputToLastNameTextBox(lastname);
+	  registerPage.inputToTextBoxByID(driver, "LastName", lastname);
 	  
 	  log.info("Register - Step 04: Enter To Email textbox with value '" + emailaddress + "'");
-	  registerPage.inputToEmailTextBox(emailaddress);
+	  registerPage.inputToTextBoxByID(driver, "Email", emailaddress);
 	  
 	  log.info("Register - Step 05: Enter To Password textbox with value '" + password + "'");
-	  registerPage.inputToPasswordTextBox(password);
+	  registerPage.inputToTextBoxByID(driver, "Password", password);
 	  
 	  log.info("Register - Step 06: Enter To Confirm Password textbox with value '" + confirmpassword + "'");
-	  registerPage.inputToConfirmPasswordTextBox(confirmpassword);
+	  registerPage.inputToTextBoxByID(driver, "ConfirmPassword", confirmpassword);
 	  
 	  log.info("Register - Step 07: Click to 'Register' button");
-	  registerPage.clickToRegisterButton();
+	  registerPage.clickToButtonByText(driver, "Register");
 	  
 	  log.info("Register - Step 08: Verify Register success message is displayed");
-	  verifyEquals(registerPage.getEmailSuccessMessage(), "Your registration completed...");
+	  assertEquals(registerPage.getEmailSuccessMessage(), "Your registration completed");    
 	  
-	  log.info("Register - Step 09: Click to Logout link");
-	  homePage = registerPage.clickToLogoutButton();	  
+	  registerPage.clickToLogoutButton();	
   }
 
-  @Test
-  public void TC_02_Login() { 
-	  log.info("Login - Step 01: Navigate to Login page");
-	  loginPage = homePage.openLoginPage();
-	  
-	  log.info("Login - Step 02: Enter To Email textbox with value '" + emailaddress + "'");
-	  loginPage.inputToEmailTextBox(emailaddress);
-	  
-	  log.info("Login - Step 03: Enter To Password textbox with value '" + password + "'");
-	  loginPage.inputToPasswordTextBox(password);
-	  
-	  log.info("Login - Step 04: Click to 'Login' button");
-	  homePage = loginPage.clickToLoginButton();
-	  
-	  log.info("Login - Step 05: Verify 'My Account' link is displayed");
-	  verifyFalse(homePage.isMyAccountLinkDisplay()); //verifyTrue
-	  
-	  log.info("Login - Step 06: Navigation to My Account page");
-	  customerInfor = homePage.clickMyAccountLink();
-	  
-	  log.info("Login - Step 07: Verify 'Customer Infor' page is displayed");
-	  verifyFalse(customerInfor.isMyAccountPageDisplay()); //verifyTrue
-  }
+//  @Test
+//  public void TC_02_Login() { 
+//	  log.info("Login - Step 01: Navigate to Login page");
+//	  homePage = registerPage.clickToLogoutButton();	
+//	  loginPage = homePage.openLoginPage();
+//	  
+//	  log.info("Login - Step 02: Enter To Email textbox with value '" + emailaddress + "'");
+//	  loginPage.inputToTextBoxByID(driver, "Email", emailaddress);
+//	  
+//	  log.info("Login - Step 03: Enter To Password textbox with value '" + password + "'");
+//	  loginPage.inputToTextBoxByID(driver, "Password", password);
+//	  
+//	  log.info("Login - Step 04: Click to 'Login' button");
+//	  loginPage.clickToButtonByText(driver, "Login");
+//	  homePage = PageGeneratorManager.getHomePage(driver);
+//	  
+//	  log.info("Login - Step 05: Verify 'My Account' link is displayed");
+//	  verifyFalse(homePage.isMyAccountLinkDisplay()); //verifyTrue
+//	  
+//	  log.info("Login - Step 06: Navigation to My Account page");
+//	  customerInfor = homePage.clickMyAccountLink();
+//	  
+//	  log.info("Login - Step 07: Verify 'Customer Infor' page is displayed");
+//	  verifyFalse(customerInfor.isMyAccountPageDisplay()); //verifyTrue
+//  }
 
-  @AfterClass
+  @AfterClass(alwaysRun = true)
   public void afterClass() {
-	  driver.quit();
+	  closeBrowserAndDriver();
   }
   
   public int generateNumber() {
