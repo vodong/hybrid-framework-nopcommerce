@@ -1,7 +1,10 @@
 package com.nopcommerce.user;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
+import java.lang.reflect.Method;
 import java.util.Random;
 
 import org.openqa.selenium.WebDriver;
@@ -9,12 +12,16 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.Status;
+
 import commons.BaseTest;
 import commons.PageGeneratorManager;
 import pageObjects.nopcommerce.User.UserCustomerInfoPageObject;
 import pageObjects.nopcommerce.User.UserHomePageObject;
 import pageObjects.nopcommerce.User.UserLoginPageObject;
 import pageObjects.nopcommerce.User.UserRegisterPageObject;
+import reportConfig.ExtentTestManager;
 
 public class User_18_Pattern_Object extends BaseTest {
 	private WebDriver driver;
@@ -39,59 +46,60 @@ public class User_18_Pattern_Object extends BaseTest {
   }
   
   @Test
-  public void TC_01_Register() { 
-	  log.info("Register - Step 01: Open Register page");
+  public void TC_01_Register(Method method) { 
+	  ExtentTestManager.startTest(method.getName(), "Register to system with valid Email and Password");
+	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 01: Open Register page");
+
 	  registerPage = homePage.openRegisterPage();
-	  
-	  log.info("Register - Step 02: Enter To Firstname textbox with value '" + firstname + "'");
+
+	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 02: Enter To Firstname textbox with value '" + firstname + "'");
 	  registerPage.inputToTextBoxByID(driver, "FirstName", firstname);
-	  
-	  log.info("Register - Step 03: Enter To Lastname textbox with value '" + lastname + "'");
+
+	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 03: Enter To Lastname textbox with value '" + lastname + "'");
 	  registerPage.inputToTextBoxByID(driver, "LastName", lastname);
 	  
-	  log.info("Register - Step 04: Enter To Email textbox with value '" + emailaddress + "'");
+	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 04: Enter To Email textbox with value '" + emailaddress + "'");
 	  registerPage.inputToTextBoxByID(driver, "Email", emailaddress);
 	  
-	  log.info("Register - Step 05: Enter To Password textbox with value '" + password + "'");
+	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 05: Enter To Password textbox with value '" + password + "'");
 	  registerPage.inputToTextBoxByID(driver, "Password", password);
 	  
-	  log.info("Register - Step 06: Enter To Confirm Password textbox with value '" + confirmpassword + "'");
+	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 06: Enter To Confirm Password textbox with value '" + confirmpassword + "'");
 	  registerPage.inputToTextBoxByID(driver, "ConfirmPassword", confirmpassword);
-	  
-	  log.info("Register - Step 07: Click to 'Register' button");
+
+	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 07: Click to 'Register' button");
 	  registerPage.clickToButtonByText(driver, "Register");
 	  
-	  log.info("Register - Step 08: Verify Register success message is displayed");
-	  assertEquals(registerPage.getEmailSuccessMessage(), "Your registration completed");    
-	  
-	  registerPage.clickToLogoutButton();	
+	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 08: Verify Register success message is displayed");
+	  assertEquals(registerPage.getEmailSuccessMessage(), "Your registration completed");  
   }
 
-//  @Test
-//  public void TC_02_Login() { 
-//	  log.info("Login - Step 01: Navigate to Login page");
-//	  homePage = registerPage.clickToLogoutButton();	
-//	  loginPage = homePage.openLoginPage();
-//	  
-//	  log.info("Login - Step 02: Enter To Email textbox with value '" + emailaddress + "'");
-//	  loginPage.inputToTextBoxByID(driver, "Email", emailaddress);
-//	  
-//	  log.info("Login - Step 03: Enter To Password textbox with value '" + password + "'");
-//	  loginPage.inputToTextBoxByID(driver, "Password", password);
-//	  
-//	  log.info("Login - Step 04: Click to 'Login' button");
-//	  loginPage.clickToButtonByText(driver, "Login");
-//	  homePage = PageGeneratorManager.getHomePage(driver);
-//	  
-//	  log.info("Login - Step 05: Verify 'My Account' link is displayed");
-//	  verifyFalse(homePage.isMyAccountLinkDisplay()); //verifyTrue
-//	  
-//	  log.info("Login - Step 06: Navigation to My Account page");
-//	  customerInfor = homePage.clickMyAccountLink();
-//	  
-//	  log.info("Login - Step 07: Verify 'Customer Infor' page is displayed");
-//	  verifyFalse(customerInfor.isMyAccountPageDisplay()); //verifyTrue
-//  }
+  @Test
+  public void TC_02_Login(Method method) { 
+	  ExtentTestManager.startTest(method.getName(), "Login to system with valid Email and Password");
+	  ExtentTestManager.getTest().log(Status.INFO,"Login - Step 01: Navigate to Login page");
+	  homePage = registerPage.clickToLogoutButton();
+	  loginPage = homePage.openLoginPage();
+	  
+	  ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02: Enter To Email textbox with value '" + emailaddress + "'");
+	  loginPage.inputToTextBoxByID(driver, "Email", emailaddress);
+	  
+	  ExtentTestManager.getTest().log(Status.INFO, "Login - Step 03: Enter To Password textbox with value '" + password + "'");
+	  loginPage.inputToTextBoxByID(driver, "Password", password);
+	  
+	  ExtentTestManager.getTest().log(Status.INFO, "Login - Step 04: Click to 'Login' button");
+	  loginPage.clickToButtonByText(driver, "Log in");
+	  homePage = PageGeneratorManager.getHomePage(driver);
+	  
+	  ExtentTestManager.getTest().log(Status.INFO, "Login - Step 05: Verify 'My Account' link is displayed");
+	  assertTrue(homePage.isMyAccountLinkDisplay()); //verifyTrue
+	  
+	  ExtentTestManager.getTest().log(Status.INFO, "Login - Step 06: Navigation to My Account page");
+	  customerInfor = homePage.clickMyAccountLink();
+	  
+	  ExtentTestManager.getTest().log(Status.INFO, "Login - Step 07: Verify 'Customer Infor' page is displayed");
+	  assertTrue(customerInfor.isMyAccountPageDisplay()); //verifyTrue
+  }
 
   @AfterClass(alwaysRun = true)
   public void afterClass() {

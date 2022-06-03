@@ -71,7 +71,7 @@ public class User_15_log_ReportNGV5 extends BaseTest {
 	  registerPage.clickToRegisterButton();
 	  
 	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 08: Verify Register success message is displayed");
-	  assertEquals(registerPage.getEmailSuccessMessage(), "Your registration completed...");
+	  assertEquals(registerPage.getEmailSuccessMessage(), "Your registration completed");
 	  
 	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 09: Click to Logout link");
 	  homePage = registerPage.clickToLogoutButton();	  

@@ -60,7 +60,7 @@ public class User_15_log_ReportNG extends BaseTest {
 	  registerPage.clickToRegisterButton();
 	  
 	  log.info("Register - Step 08: Verify Register success message is displayed");
-	  verifyEquals(registerPage.getEmailSuccessMessage(), "Your registration completed...");
+	  verifyEquals(registerPage.getEmailSuccessMessage(), "Your registration completed");
 	  
 	  log.info("Register - Step 09: Click to Logout link");
 	  homePage = registerPage.clickToLogoutButton();	  

@@ -13,7 +13,7 @@
 	<test name="Run on FireFox">
 		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="com.nopcommerce.user.User_15_log_ReportNGV5"/>
+			<class name="com.nopcommerce.user.User_15_log_ReportNG"/>
 		</classes>
 	  </test>
 </suite> <!-- Suite -->
