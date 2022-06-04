@@ -49,5 +49,6 @@ public class PageGeneratorManager {
 	public static AdminLoginPageObject getadminLoginPage(WebDriver driver) {
 		return new AdminLoginPageObject(driver);
 	}
+	
 
 }
