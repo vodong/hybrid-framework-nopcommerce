@@ -40,6 +40,6 @@ public class LoginPageObject extends BasePage {
 	public boolean isConfirmEmailAddressTextboxUndisplayed() {
 		waitForElementUnDisplayed(driver, LoginPageUI.CONFIRM_EMAIL_ADDRESS_TEXTBOX);
 		return isElementUndisplayed(driver, LoginPageUI.CONFIRM_EMAIL_ADDRESS_TEXTBOX);
-		
+		//test
 	}
 }
