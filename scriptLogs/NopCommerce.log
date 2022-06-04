@@ -185,3 +185,5 @@
 [INFO ] [2022-06-03 14:08:10,815] Register - Step 08: Verify Register success message is displayed
 [INFO ] [2022-06-03 14:08:13,072] OS name = mac os x
 [INFO ] [2022-06-03 14:08:13,073] Driver instance name = chromedriver: chrome on mac (f44a88a291c840d05e51e96f90925915)
+[INFO ] [2022-06-04 15:31:41,011] OS name = windows 10
+[INFO ] [2022-06-04 15:31:41,011] Driver instance name = firefoxdriver: firefox on windows (3ec79725-9362-44c6-86aa-b8fc35eca3de)
