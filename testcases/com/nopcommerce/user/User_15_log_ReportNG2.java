@@ -60,7 +60,7 @@ public class User_15_log_ReportNG2 extends BaseTest {
 	  registerPage.clickToRegisterButton();
 	  
 	  log.info("Register - Step 08: Verify Register success message is displayed");
-	  verifyEquals(registerPage.getEmailSuccessMessage(), "Your registration completed...");
+	  verifyEquals(registerPage.getEmailSuccessMessage(), "Your registration completed");
 	  
 	  log.info("Register - Step 09: Click to Logout link");
 	  homePage = registerPage.clickToLogoutButton();	  
@@ -81,13 +81,13 @@ public class User_15_log_ReportNG2 extends BaseTest {
 	  homePage = loginPage.clickToLoginButton();
 	  
 	  log.info("Login - Step 05: Verify 'My Account' link is displayed");
-	  verifyFalse(homePage.isMyAccountLinkDisplay()); //verifyTrue
+	  verifyTrue(homePage.isMyAccountLinkDisplay());
 	  
 	  log.info("Login - Step 06: Navigation to My Account page");
 	  customerInfor = homePage.clickMyAccountLink();
 	  
 	  log.info("Login - Step 07: Verify 'Customer Infor' page is displayed");
-	  verifyFalse(customerInfor.isMyAccountPageDisplay()); //verifyTrue
+	  verifyTrue(customerInfor.isMyAccountPageDisplay());
   }
 
   @AfterClass

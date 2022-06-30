@@ -1,6 +1,8 @@
 package commons;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.logging.Log;
@@ -8,6 +10,8 @@ import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -24,23 +28,52 @@ public class BaseTest {
 	protected WebDriver getBrowserDriver(String browserName) {
 		if(browserName.equals("firefox")) {
 //			  System.setProperty("webdriver.gecko.driver", projectPath + "\\browserdrivers\\geckodriver.exe");
-			  WebDriverManager.firefoxdriver().setup();
-			  driver = new FirefoxDriver(); 
-		  }else if(browserName.equals("chrome")) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver(); 
+		}else if(browserName.equals("chrome")) {
 //			  System.setProperty("webdriver.chrome.driver", projectPath + "\\browserdrivers\\chromedriver.exe");
-			  WebDriverManager.chromedriver().setup();
-			  driver = new ChromeDriver();
-		  }else if(browserName.equals("edge")) {
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		}else if(browserName.equals("edge")) {
 //			  System.setProperty("webdriver.edge.driver", projectPath + "\\browserdrivers\\msedgedriver.exe");
-			  WebDriverManager.edgedriver().setup();
-			  driver = new ChromeDriver();
-		  }else {
-			  throw new RuntimeException("Browser name is invalid");
-		  }
+			WebDriverManager.edgedriver().setup();
+			driver = new ChromeDriver();
+		}else {
+			throw new RuntimeException("Browser name is invalid");
+		}
 //		driver.get("http://live.techpanda.org/index.php/");
 		driver.get(GlobalConstants.PORTAL_DEV_URL);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIME_OUT, TimeUnit.SECONDS);
+		return driver;
+	}
+	
+	protected WebDriver getBrowserDriverBrowserstack(String browserName, String apURL, String osName, String osVersion) {
+		DesiredCapabilities capability = new DesiredCapabilities();
+		capability.setCapability("os", osName);
+		capability.setCapability("os_version", osVersion);
+		capability.setCapability("browser", browserName);
+		capability.setCapability("browser_version", "latest");
+		capability.setCapability("browserstack.debug", "true");
+		capability.setCapability("project", "NopCommerce");
+		capability.setCapability("name", "Run on" + osName + " | " + osVersion + " | " + browserName);
+		
+		if(osName.contains("Windows")) {
+			capability.setCapability("resolution", "1920x1080");
+		}else {
+			capability.setCapability("resolution", "1920x1440");
+		}
+		
+		try {
+			driver = new RemoteWebDriver(new URL(GlobalConstants.BROWSE_STACK_URL), capability);
+		}catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		
+		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIME_OUT, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		//driver.get(GlobalConstants.PORTAL_DEV_URL);
+		driver.get(apURL);
 		return driver;
 	}
 	

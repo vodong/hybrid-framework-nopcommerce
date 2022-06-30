@@ -1,6 +1,7 @@
 package com.nopcommerce.user;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.lang.reflect.Method;
@@ -22,7 +23,7 @@ import pageObjects.nopcommerce.User.UserLoginPageObject;
 import pageObjects.nopcommerce.User.UserRegisterPageObject;
 import reportConfig.ExtentTestManager;
 
-public class User_18_Pattern_Object extends BaseTest {
+public class User_19_Run_Browserstack extends BaseTest {
 	private WebDriver driver;
 	private String emailaddress,firstname,lastname,password,confirmpassword;
 	private UserHomePageObject homePage;
@@ -30,10 +31,10 @@ public class User_18_Pattern_Object extends BaseTest {
 	private UserLoginPageObject loginPage;
 	private UserCustomerInfoPageObject customerInfor;
 
-  @Parameters("browser")
+  @Parameters({"browser", "url", "osName", "osVersion"})
   @BeforeClass
-  public void beforeClass(String browserName) {
-	  driver = getBrowserDriver(browserName);
+  public void beforeClass(String browserName, String appURL, String osName, String osVersion) {
+	  driver = getBrowserDriverBrowserstack(browserName, appURL, osName, osVersion);
 	  homePage = PageGeneratorManager.getHomePage(driver);
 
 	  emailaddress = "frameworkdpv_" + generateNumber() + "@yopmail.com";
@@ -52,57 +53,56 @@ public class User_18_Pattern_Object extends BaseTest {
 	  registerPage = homePage.openRegisterPage();
 
 	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 02: Enter To Firstname textbox with value '" + firstname + "'");
-	  registerPage.inputToTextBoxByID(driver, "FirstName", firstname);
+	  registerPage.inputToFirstNameTextBox(firstname);
 
 	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 03: Enter To Lastname textbox with value '" + lastname + "'");
-	  registerPage.inputToTextBoxByID(driver, "LastName", lastname);
+	  registerPage.inputToLastNameTextBox(lastname);
 	  
 	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 04: Enter To Email textbox with value '" + emailaddress + "'");
-	  registerPage.inputToTextBoxByID(driver, "Email", emailaddress);
+	  registerPage.inputToEmailTextBox(emailaddress);
 	  
 	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 05: Enter To Password textbox with value '" + password + "'");
-	  registerPage.inputToTextBoxByID(driver, "Password", password);
+	  registerPage.inputToPasswordTextBox(password);
 	  
 	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 06: Enter To Confirm Password textbox with value '" + confirmpassword + "'");
-	  registerPage.inputToTextBoxByID(driver, "ConfirmPassword", confirmpassword);
+	  registerPage.inputToConfirmPasswordTextBox(confirmpassword);
 
 	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 07: Click to 'Register' button");
-	  registerPage.clickToButtonByText(driver, "Register");
+	  registerPage.clickToRegisterButton();
 	  
 	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 08: Verify Register success message is displayed");
-	  assertEquals(registerPage.getEmailSuccessMessage(), "Your registration completed");  
+	  assertEquals(registerPage.getEmailSuccessMessage(), "Your registration completed");
+	  
+	  ExtentTestManager.getTest().log(Status.INFO, "Register - Step 09: Click to Logout link");
+	  homePage = registerPage.clickToLogoutButton();	  
   }
 
   @Test
   public void TC_02_Login(Method method) { 
 	  ExtentTestManager.startTest(method.getName(), "Login to system with valid Email and Password");
 	  ExtentTestManager.getTest().log(Status.INFO,"Login - Step 01: Navigate to Login page");
-	  homePage = registerPage.clickToLogoutButton();
 	  loginPage = homePage.openLoginPage();
 	  
 	  ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02: Enter To Email textbox with value '" + emailaddress + "'");
-	  loginPage.inputToTextBoxByID(driver, "Email", emailaddress);
+	  loginPage.inputToEmailTextBox(emailaddress);
 	  
 	  ExtentTestManager.getTest().log(Status.INFO, "Login - Step 03: Enter To Password textbox with value '" + password + "'");
-	  loginPage.inputToTextBoxByID(driver, "Password", password);
+	  loginPage.inputToPasswordTextBox(password);
 	  
 	  ExtentTestManager.getTest().log(Status.INFO, "Login - Step 04: Click to 'Login' button");
-	  loginPage.clickToButtonByText(driver, "Log in");
-	  homePage = PageGeneratorManager.getHomePage(driver);
-	  
+	  homePage = loginPage.clickToLoginButton();
 	  ExtentTestManager.getTest().log(Status.INFO, "Login - Step 05: Verify 'My Account' link is displayed");
-	  assertTrue(homePage.isMyAccountLinkDisplay());
+	  assertTrue(homePage.isMyAccountLinkDisplay()); //verifyTrue
 	  
 	  ExtentTestManager.getTest().log(Status.INFO, "Login - Step 06: Navigation to My Account page");
 	  customerInfor = homePage.clickMyAccountLink();
-	  
 	  ExtentTestManager.getTest().log(Status.INFO, "Login - Step 07: Verify 'Customer Infor' page is displayed");
-	  assertTrue(customerInfor.isMyAccountPageDisplay());
+	  assertTrue(customerInfor.isMyAccountPageDisplay()); //verifyTrue
   }
 
-  @AfterClass(alwaysRun = true)
+  @AfterClass
   public void afterClass() {
-	  closeBrowserAndDriver();
+	  driver.quit();
   }
   
   public int generateNumber() {

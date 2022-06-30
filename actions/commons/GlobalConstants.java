@@ -22,6 +22,8 @@ public class GlobalConstants {
 	public static final long RETRY_TEST__FAIL = 3;
 	
 	public static final String ADMIN_LIVE_GURU_99_URL = "http://live.techpanda.org/index.php/backendlogin/customer/";
-
-
+	
+	public static final String BROWSE_USERNAME = "vodongpham_vbRLlM";
+	public static final String BROWSE_AUTOMATE_KEY = "idztyWmBznShx8tLvKAe";
+	public static final String BROWSE_STACK_URL = "https://" + BROWSE_USERNAME + ":" + BROWSE_AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 }
