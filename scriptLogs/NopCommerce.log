@@ -191,3 +191,21 @@
 [INFO ] [2022-06-04 16:02:21,753] Driver instance name = firefoxdriver: firefox on windows (fec13100-3570-479b-9417-c2e4e91b8f7f)
 [INFO ] [2022-06-04 16:02:35,251] OS name = windows 10
 [INFO ] [2022-06-04 16:02:35,252] Driver instance name = firefoxdriver: firefox on windows (a9d87f0e-f3b5-419a-bc48-3f0ce511ba6f)
+[INFO ] [2022-06-30 18:13:52,271] Register - Step 01: Open Register page
+[INFO ] [2022-06-30 18:13:52,816] Register - Step 02: Enter To Firstname textbox with value 'A'
+[INFO ] [2022-06-30 18:13:52,903] Register - Step 03: Enter To Lastname textbox with value 'T'
+[INFO ] [2022-06-30 18:13:52,978] Register - Step 04: Enter To Email textbox with value 'frameworkdpv_932@yopmail.com'
+[INFO ] [2022-06-30 18:13:53,064] Register - Step 05: Enter To Password textbox with value '123456'
+[INFO ] [2022-06-30 18:13:53,146] Register - Step 06: Enter To Confirm Password textbox with value '123456'
+[INFO ] [2022-06-30 18:13:53,221] Register - Step 07: Click to 'Register' button
+[INFO ] [2022-06-30 18:13:54,022] Register - Step 08: Verify Register success message is displayed
+[INFO ] [2022-06-30 18:13:54,067] Register - Step 09: Click to Logout link
+[INFO ] [2022-06-30 18:13:54,822] Login - Step 01: Navigate to Login page
+[INFO ] [2022-06-30 18:13:55,415] Login - Step 02: Enter To Email textbox with value 'frameworkdpv_932@yopmail.com'
+[INFO ] [2022-06-30 18:13:55,496] Login - Step 03: Enter To Password textbox with value '123456'
+[INFO ] [2022-06-30 18:13:55,571] Login - Step 04: Click to 'Login' button
+[INFO ] [2022-06-30 18:13:56,294] Login - Step 05: Verify 'My Account' link is displayed
+[INFO ] [2022-06-30 18:13:56,354]  -------------------------- FAILED -------------------------- 
+[INFO ] [2022-06-30 18:13:56,354] Login - Step 06: Navigation to My Account page
+[INFO ] [2022-06-30 18:13:56,869] Login - Step 07: Verify 'Customer Infor' page is displayed
+[INFO ] [2022-06-30 18:13:56,927]  -------------------------- FAILED -------------------------- 

@@ -1,2 +1,0 @@
-[INFO ] [2022-06-04 16:02:35,251] OS name = windows 10
-[INFO ] [2022-06-04 16:02:35,252] Driver instance name = firefoxdriver: firefox on windows (a9d87f0e-f3b5-419a-bc48-3f0ce511ba6f)

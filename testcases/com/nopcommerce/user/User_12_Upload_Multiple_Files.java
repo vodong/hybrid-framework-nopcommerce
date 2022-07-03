@@ -7,6 +7,7 @@ import static org.testng.Assert.assertTrue;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -21,10 +22,10 @@ public class User_12_Upload_Multiple_Files extends BaseTest {
 	String Screenshot3 = "Screenshot3.png";
 	String[] multipleFileNames = {Screenshot1, Screenshot2, Screenshot3};
 
-  @Parameters({"browser", "url"})
-  @BeforeClass
-  public void beforeClass(String browserName, String appUrl) {
-	  driver = getBrowserDriver(browserName, appUrl);
+	  @Parameters({"envName", "serverName", "browser" , "osName", "osVersion"})
+	  @BeforeClass
+	  public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion) {
+		  driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion);
 	  homePage = pageGeneratorManager.getHomePage(driver);
   }
 

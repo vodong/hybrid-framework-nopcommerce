@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -26,10 +27,10 @@ public class User_06_Register_PageGenerator_Manager extends BaseTest {
 	private UserHomePageObject homePage;
 	private UserRegisterPageObject registerPage;
 
-  @Parameters("browser")
-  @BeforeClass
-  public void beforeClass(String browserName) {
-	  driver = getBrowserDriver(browserName);
+	  @Parameters({"envName", "serverName", "browser" , "osName", "osVersion"})
+	  @BeforeClass
+	  public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion) {
+      driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion);
 	  homePage = PageGeneratorManager.getHomePage(driver);
 
 	  emailaddress = "frameworkdpv_" + generateNumber() + "@yopmail.com";

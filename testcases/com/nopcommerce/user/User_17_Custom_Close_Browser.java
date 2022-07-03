@@ -5,6 +5,7 @@ import java.util.Random;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -21,10 +22,10 @@ public class User_17_Custom_Close_Browser extends BaseTest {
 	private UserHomePageObject homePage;
 	private UserLoginPageObject loginPage;
 
-  @Parameters("browser")
-  @BeforeClass
-  public void beforeClass(String browserName) {
-	  driver = getBrowserDriver(browserName);
+	  @Parameters({"envName", "serverName", "browser" , "osName", "osVersion"})
+	  @BeforeClass
+	  public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion) {
+		  driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion);
 	  homePage = PageGeneratorManager.getHomePage(driver);
 	  
 	  emailaddress = Common_01_Register_End_User.emailaddress;
@@ -49,8 +50,8 @@ public class User_17_Custom_Close_Browser extends BaseTest {
   }
 
   @AfterClass(alwaysRun = true)
-  public void afterClass() {
-	  closeBrowserAndDriver();
+  public void afterClass(String envName) {
+	  closeBrowserAndDriver(envName);
   }
   
   public int generateNumber() {

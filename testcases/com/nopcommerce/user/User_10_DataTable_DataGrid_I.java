@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -18,10 +19,10 @@ public class User_10_DataTable_DataGrid_I extends BaseTest {
 	List<String> actualAllValues;
 	List<String> expectedAllValues;
 
-  @Parameters({"browser", "url"})
-  @BeforeClass
-  public void beforeClass(String browserName, String appUrl) {
-	  driver = getBrowserDriver(browserName, appUrl);
+	  @Parameters({"envName", "serverName", "browser" , "osName", "osVersion"})
+	  @BeforeClass
+	  public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion) {
+		  driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion);
 	  homePage = pageGeneratorManager.getHomePage(driver);
   }
 

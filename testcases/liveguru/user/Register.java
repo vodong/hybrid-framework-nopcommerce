@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -24,10 +25,10 @@ public class Register extends BaseTest {
 	private DashBoardPageObject DashboardPage;
 	String emailaddress,firstname,lastname,password,confirmpassword,emailuser;
 	
-	 @Parameters("browser")
-	 @BeforeClass
-	  public void beforeClass(String browserName) {
-		  driver = getBrowserDriver(browserName);
+	  @Parameters({"envName", "serverName", "browser" , "osName", "osVersion"})
+	  @BeforeClass
+	  public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion) {
+		  driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion);
 		  homePage = PageGeneratorManager.getHomepage(driver);
 		  
 		  firstname = "AT";
