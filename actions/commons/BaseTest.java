@@ -31,9 +31,9 @@ public class BaseTest {
 		case "local":
 			driver = new LocalFactory(browserName).createDriver();
 			break;
-//		case "Grid":
-//			driver = new LocalFactory(browserName).createDriver();
-//			break;
+		case "Grid":
+			driver = new LocalFactory(browserName).createDriver();
+			break;
 		case "BrowserStack":
 			driver = new BrowserStackFactory(browserName, osName, osVersion).createDriver();
 			break;
