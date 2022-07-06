@@ -7,13 +7,15 @@
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 
-	<parameter name="envName" value="BrowserStack" />
+	<parameter name="envName" value="grid" />
 	<parameter name="serverName" value="DEV" />
 
 	<test name="Run on FireFox">
 		<parameter name="browser" value="Firefox" />
-		<parameter name="osName" value="Windows" />
-		<parameter name="osVersion" value="10" />
+		<parameter name="ipAddress" value="localhost" />
+		<parameter name="portNumber" value="4444" />
+		<!--	<parameter name="osName" value="Windows" /> -->
+		<!--	<parameter name="osVersion" value="10" /> -->
 		<classes>
 			<class name="com.nopcommerce.user.User_19_Run_Browserstack" />
 		</classes>
@@ -21,11 +23,12 @@
 
 	<test name="Run on Chrome">
 		<parameter name="browser" value="Chrome" />
-		<parameter name="osName" value="Windows" />
-		<parameter name="osVersion" value="10" />
+		<parameter name="ipAddress" value="localhost" />
+		<parameter name="portNumber" value="4444" />
+		<!--	<parameter name="osName" value="Windows" /> -->
+		<!--	<parameter name="osVersion" value="10" /> -->
 		<classes>
 			<class name="com.nopcommerce.user.User_19_Run_Browserstack" />
 		</classes>
 	</test>
-
 </suite> <!-- Suite -->
