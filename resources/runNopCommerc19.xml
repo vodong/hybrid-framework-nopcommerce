@@ -22,7 +22,7 @@
 	</test>
 
 	<test name="Run on Chrome">
-		<parameter name="browser" value="Chrome" />
+		<parameter name="browser" value="chrome" />
 		<parameter name="ipAddress" value="localhost" />
 		<parameter name="portNumber" value="4444" />
 		<!--	<parameter name="osName" value="Windows" /> -->

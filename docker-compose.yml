@@ -28,7 +28,7 @@ services:
       - "16900:5900"
     environment:
       - HUB_HOST=selenium-hub
-      - HUB_PORT=4445
+      - HUB_PORT=4444
       - NODE_MAX_INSTANCES=5
       - NODE_MAX_SESSION=5
       - SCREEN_WIDTH=1920
