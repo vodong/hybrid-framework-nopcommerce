@@ -22,10 +22,10 @@ public class User_12_Upload_Multiple_Files extends BaseTest {
 	String Screenshot3 = "Screenshot3.png";
 	String[] multipleFileNames = {Screenshot1, Screenshot2, Screenshot3};
 
-	  @Parameters({"envName", "serverName", "browser" , "osName", "osVersion"})
+	  @Parameters({"envName", "serverName", "browser" , "osName", "osVersion", "ipAddress", "portNumber"})
 	  @BeforeClass
-	  public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion) {
-		  driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion);
+	  public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion, @Optional("localhost") String ipAddress, @Optional("4444") String portNumber) {
+		  driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion, ipAddress, portNumber);
 	  homePage = pageGeneratorManager.getHomePage(driver);
   }
 

@@ -10,6 +10,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import factoryBrowser.BrowserList;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class GridFactory {
@@ -25,10 +26,10 @@ public class GridFactory {
 	}
 	
 	public WebDriver createDriver() {
-		Browser browser = Browser.valueOf(browserName.toUpperCase());
+		BrowserList browser = BrowserList.valueOf(browserName.toUpperCase());
 		DesiredCapabilities capability = null;
 		
-		if(browser == Browser.FIREFOX) {
+		if(browser == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			capability = DesiredCapabilities.firefox();
 			capability.setBrowserName("firefox");
@@ -36,7 +37,7 @@ public class GridFactory {
 			
 			FirefoxOptions options = new FirefoxOptions();
 			options.merge(capability);
-		}else if(browser == Browser.CHROME) {
+		}else if(browser == BrowserList.CHROME) {
 			WebDriverManager.chromedriver().setup();
 			capability = DesiredCapabilities.chrome();
 			capability.setBrowserName("chrome");
@@ -44,18 +45,18 @@ public class GridFactory {
 			
 			ChromeOptions options = new ChromeOptions();
 			options.merge(capability);
-		}else if(browser == Browser.EDGE) {
+		}else if(browser == BrowserList.EDGE) {
 			WebDriverManager.chromedriver().setup();
 			capability = DesiredCapabilities.edge();
 			capability.setBrowserName("edge");
 			capability.setPlatform(Platform.ANY);
 			capability.setJavascriptEnabled(true);
-		}else if(browser == Browser.SAFARI) {
+		}else if(browser == BrowserList.SAFARI) {
 			capability = DesiredCapabilities.safari();
 			capability.setBrowserName("safari");
 			capability.setJavascriptEnabled(true);
 			capability.setPlatform(Platform.MAC);
-		}else if(browser == Browser.IE) {
+		}else if(browser == BrowserList.IE) {
 			WebDriverManager.iedriver().arch32().setup();
 			capability = DesiredCapabilities.internetExplorer();
 			capability.setBrowserName("internetexplorer");

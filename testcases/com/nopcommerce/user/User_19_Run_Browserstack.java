@@ -25,17 +25,17 @@ import pageObjects.nopcommerce.User.UserRegisterPageObject;
 import reportConfig.ExtentTestManager;
 
 public class User_19_Run_Browserstack extends BaseTest {
-	private WebDriver driver;
+	WebDriver driver;
 	private String emailaddress,firstname,lastname,password,confirmpassword;
 	private UserHomePageObject homePage;
 	private UserRegisterPageObject registerPage;
 	private UserLoginPageObject loginPage;
 	private UserCustomerInfoPageObject customerInfor;
 
-  @Parameters({"envName", "serverName", "browser" , "osName", "osVersion"})
-  @BeforeClass
-  public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion) {
-	  driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion);
+	  @Parameters({"envName", "serverName", "browser" , "osName", "osVersion", "ipAddress", "portNumber"})
+	  @BeforeClass
+	  public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion, @Optional("localhost") String ipAddress, @Optional("4444") String portNumber) {
+		  driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion, ipAddress, portNumber);
 	  homePage = PageGeneratorManager.getHomePage(driver);
 
 	  emailaddress = "frameworkdpv_" + generateNumber() + "@yopmail.com";
@@ -100,10 +100,12 @@ public class User_19_Run_Browserstack extends BaseTest {
 	  ExtentTestManager.getTest().log(Status.INFO, "Login - Step 07: Verify 'Customer Infor' page is displayed");
 	  assertTrue(customerInfor.isMyAccountPageDisplay()); //verifyTrue
   }
-
-  @AfterClass
-  public void afterClass() {
-	  driver.quit();
+  
+  @Parameters({"browser"})
+  @AfterClass (alwaysRun = true)
+  public void afterClass(String browserName) {
+	  ExtentTestManager.getTest().log(Status.INFO,"Close broser '" + browserName + "'");
+	  closeBrowserAndDriver();
   }
   
   public int generateNumber() {

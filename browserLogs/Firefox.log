@@ -1,0 +1,31 @@
+1657434848910	geckodriver	INFO	Listening on 127.0.0.1:33548
+1657434849046	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\VODONG~1\\AppData\\Local\\Temp\\rust_mozprofileVuyDAM"
+1657434849341	Marionette	INFO	Marionette enabled
+1657434849345	Marionette	INFO	Listening on port 50980
+Read port: 50980
+1657434849669	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://browser/content/tabbrowser.js, line 5320: TypeError: this.PictureInPicture is undefined
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\VODONG~1\\AppData\\Local\\Temp\\rust_mozprofileVuyDAM\\search.json.mozlz4", (void 0)))
+JavaScript error: resource:///modules/CustomizableUI.jsm, line 4110: Error: Area not yet restored
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://demo.nopcommerce.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://demo.nopcommerJavce.com"
+aScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1657434853742	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:234:19
+TimedPromise@chrome://remote/content/marionette/sync.js:219:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+1657434854567	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:234:19
+TimedPromise@chrome://remote/content/marionette/sync.js:219:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "hJttavps://demaScript error: o.nopcommercere.csoomurce://gre/modules/LoginManagerParent"
+.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling backJav to a synaSchronoucript ers message for:" "https://demo.nopror: resoucommercrce://gre/mode.com"ules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://demo.nopcommercJavaScre.com"
+ipt error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1657434856455	Marionette	INFO	Stopped listening on port 50980
+JavaScript error: resource:///modules/CustomizableUI.jsm, line 4852: TypeError: aWindow.gNavToolbox.palette is undefined
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.

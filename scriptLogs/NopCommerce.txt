@@ -1,0 +1,4 @@
+[INFO ] [2022-07-10 13:34:15,589] OS name = windows 10
+[INFO ] [2022-07-10 13:34:15,589] Driver instance name = chromedriver: chrome on windows (21c71c92fb9b981cb9c05affd7c36b20)
+[INFO ] [2022-07-10 13:34:16,450] OS name = windows 10
+[INFO ] [2022-07-10 13:34:16,450] Driver instance name = firefoxdriver: firefox on windows (59864bcb-63c1-4423-935f-1912a8284bda)

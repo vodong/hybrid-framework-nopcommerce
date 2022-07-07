@@ -29,10 +29,10 @@ public class User_Practice_11_DataTable_DataGrid_II extends BaseTest {
 	AdminDashBoardPageObject adminDashBoardPage;
 	String emailaddress, firstname, lastname, password, confirmpassword, adminUserName, adminPassword;
 
-	  @Parameters({"envName", "serverName", "browser" , "osName", "osVersion"})
+	  @Parameters({"envName", "serverName", "browser" , "osName", "osVersion", "ipAddress", "portNumber"})
 	  @BeforeClass
-	  public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion) {
-		  driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion);
+	  public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion, @Optional("localhost") String ipAddress, @Optional("4444") String portNumber) {
+		  driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion, ipAddress, portNumber);
 	  homePage = pageGeneratorManager.getHomePage(driver);
 	  emailaddress = "frameworkdpv_" + generateNumber() + "@yopmail.com";
 	  System.out.println(emailaddress);
@@ -63,7 +63,7 @@ public class User_Practice_11_DataTable_DataGrid_II extends BaseTest {
   
   @Test
   public void TC_02_Login_Admin_Role() {
-	  myAccountPage.openPageURL(driver, GlobalConstants.ADMIN_LIVE_GURU_99_URL);
+	  myAccountPage.openPageURL(driver, GlobalConstants.getGlobalConstants().getAdminLiveGuru());
 	  adminLoginPage = pageGeneratorManager.getAdminLoginPage(driver);
 	  
 	  adminDashBoardPage = adminLoginPage.loginAccount(adminUserName, adminPassword);

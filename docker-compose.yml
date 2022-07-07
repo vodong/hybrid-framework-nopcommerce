@@ -8,28 +8,36 @@ services:
 
   chrome:
     image: selenium/node-chrome-debug
-    depends_on:
-      - selenium-hub
     ports:
       - "15900:5900"
+    depends_on:
+      - selenium-hub
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
       - NODE_MAX_INSTANCES=5
       - NODE_MAX_SESSION=5
       - SCREEN_WIDTH=1920
-      - SCREEN_HEIGHT=1080
+      - SCREEN_HEIGHT-1080
 
   firefox:
     image: selenium/node-firefox-debug
-    depends_on:
-      - selenium-hub
     ports:
       - "16900:5900"
+    depends_on:
+      - selenium-hub
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
       - NODE_MAX_INSTANCES=5
       - NODE_MAX_SESSION=5
       - SCREEN_WIDTH=1920
-      - SCREEN_HEIGHT=1080
+      - SCREEN_HEIGHT-1080
+
+  opera:
+    image: selenium/node-opera:3.141.59
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
