@@ -1,0 +1,61 @@
+# To execute this docker-compose yml file use `docker-compose -f docker-compose-zalenium.yml up`
+# Add the `-d` flag at the end for detached execution
+# To stop the execution, hit Ctrl+C, and then `docker-compose -f docker-compose-zalenium.yml down`
+
+version: "3"
+services:
+  zalenium:
+    image: "doesl/zalenium"
+    restart: always
+    container_name: zalenium
+    hostname: zalenium
+    tty: true
+    volumes:
+      - /tmp/videos:/home/seluser/videos
+      -/var/run/docker.sock:/var/run/docker.sock
+      # /usr/bin/docker:/usr/bin/docker
+    
+     ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+      
+    command: >
+      start --desiredContainers 2
+            --maxDockerSeleniumContainers 8
+            -- screenWidth 1920
+            -- screenHeight 1080
+            -- timeZone "Europe/Berlin"
+            -- videoRecordingEnabled true
+            -- sauceLabsEnabled false
+            -- browserStackkEnabled false
+            -- browserStackEnabled false
+            -- testingBotEnabled false
+            -- cbtEnabled false
+            -- lambdaTestEnabled false
+            -- startTunnel false
+                 
+    environment:
+      - HOST_UID
+      - HOST_GID
+      - SAUCE_USERNAME
+      - SAUCE_ACCESS_KEY
+      - BROWSER_STACK_USER
+      - BROWSER_STACK_KEY
+      - TESTINGBOT_KEY
+      - TESTINGBOT_SECRET
+      - CBT_USERNAME
+      - CBT_AUTHKEY
+      - LT_USERNAME
+      - LT_ACCESS_KEY
+      
+    mock:
+    image: elgalu/selenium
+    restart: always
+    depends_on:
+      - zalenium
+    ports:
+      - "8080:8080"
+    tty: true
+    environment:
+      - MOCK_SERVER_PORT=8080

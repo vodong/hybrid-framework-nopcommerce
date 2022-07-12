@@ -209,3 +209,15 @@
 [INFO ] [2022-06-30 18:13:56,354] Login - Step 06: Navigation to My Account page
 [INFO ] [2022-06-30 18:13:56,869] Login - Step 07: Verify 'Customer Infor' page is displayed
 [INFO ] [2022-06-30 18:13:56,927]  -------------------------- FAILED -------------------------- 
+[INFO ] [2022-07-08 15:22:32,861] OS name = windows 10
+[INFO ] [2022-07-08 15:22:32,862] Driver instance name = java.lang.threadlocal@4fae8c83
+[INFO ] [2022-07-08 15:22:33,807] OS name = windows 10
+[INFO ] [2022-07-08 15:22:33,807] Driver instance name = java.lang.threadlocal@4fae8c83
+[INFO ] [2022-07-08 15:24:06,454] OS name = windows 10
+[INFO ] [2022-07-08 15:24:06,454] Driver instance name = firefoxdriver: firefox on windows (b252ad9f-b7ee-4950-99d0-94234c3e2379)
+[INFO ] [2022-07-08 15:24:06,879] OS name = windows 10
+[INFO ] [2022-07-08 15:24:06,879] Driver instance name = chromedriver: chrome on windows (3414120209ed5ec0eab1cd039468a95a)
+[INFO ] [2022-07-10 13:34:15,589] OS name = windows 10
+[INFO ] [2022-07-10 13:34:15,589] Driver instance name = chromedriver: chrome on windows (21c71c92fb9b981cb9c05affd7c36b20)
+[INFO ] [2022-07-10 13:34:16,450] OS name = windows 10
+[INFO ] [2022-07-10 13:34:16,450] Driver instance name = firefoxdriver: firefox on windows (59864bcb-63c1-4423-935f-1912a8284bda)

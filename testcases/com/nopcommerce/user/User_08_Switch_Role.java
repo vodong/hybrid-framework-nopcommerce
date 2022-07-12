@@ -30,10 +30,10 @@ public class User_08_Switch_Role extends BaseTest {
 	private AdminLoginPageObject adminLoginPage;
 	
 
-	  @Parameters({"envName", "serverName", "browser" , "osName", "osVersion"})
+	  @Parameters({"envName", "serverName", "browser" , "osName", "osVersion", "ipAddress", "portNumber"})
 	  @BeforeClass
-	  public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion) {
-		  driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion);
+	  public void beforeClass(@Optional("local") String envName, @Optional("DEV") String serverName,@Optional("chrome") String browserName,@Optional("Windows") String osName,@Optional("10") String osVersion, @Optional("localhost") String ipAddress, @Optional("4444") String portNumber) {
+		  driver = getBrowserDriver(envName, serverName, browserName, osName, osVersion, ipAddress, portNumber);
 	  userHomePage = PageGeneratorManager.getHomePage(driver);
 
 	  emailaddress = "frameworkdpv_" + generateNumber() + "@yopmail.com";
@@ -85,7 +85,7 @@ public class User_08_Switch_Role extends BaseTest {
   @Test
   public void TC_03_Role_Admin() {
 	  System.out.println("TC_03_Role_Admin - Step 01: Open Login Page");
-	  userHomePage.openPageURL(driver, GlobalConstants.ADMIN_DEV_URL);
+	  userHomePage.openPageURL(driver, GlobalConstants.getGlobalConstants().getAdminAppUrl());
 	  adminLoginPage = PageGeneratorManager.getadminLoginPage(driver);
 	  
 	  //Login as Admin role
@@ -101,7 +101,7 @@ public class User_08_Switch_Role extends BaseTest {
   @Test
   public void TC_04_Role_Admin_To_User() {
 	  System.out.println("TC_04_Role_Admin_To_User - Step 01: Open Login Page");
-	  adminLoginPage.openPageURL(driver, GlobalConstants.PORTAL_DEV_URL);
+	  adminLoginPage.openPageURL(driver, GlobalConstants.getGlobalConstants().getDevAppUrl());
 	  userHomePage = PageGeneratorManager.getHomePage(driver);
 	  
 	  //Login as User role
